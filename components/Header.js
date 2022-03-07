@@ -28,17 +28,20 @@ export default function Header() {
     <header css={headerStyles}>
       <div>
         <Link href="/activities">
-          <a>Activities</a>
+          <a>LOGO</a>
         </Link>
         <Link href="/messages">
-          <a>Messages()</a>
+          <a>Activities</a>
         </Link>
       </div>
-      <Link href="/login">
-        <a>Login</a>
+      <Link href="/signIn">
+        <a>Sign in</a>
       </Link>
-      <Link href="/register">
-        <a>Register</a>
+      <Link href="/signUp">
+        <a>Sign up</a>
+      </Link>
+      <Link href="/logout">
+        <a>Logout</a>
       </Link>
     </header>
   );
