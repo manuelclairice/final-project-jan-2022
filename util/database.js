@@ -37,3 +37,16 @@ export async function getSingleActivity(id) {
   SELECT * FROM activities WHERE id = ${id};`;
   return activity;
 }
+
+export async function createUser(username, password_hash) {
+  const [user] = await sql`
+  INSERT INTO users
+    (username, password_hash)
+  VALUES
+    (${username}, ${password_hash})
+    RETURNING
+    id,
+    username
+  `;
+  return camelcaseKeys(user);
+}

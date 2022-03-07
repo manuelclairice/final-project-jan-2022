@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <header css={headerStyles}>
       <div>
-        <Link href="/activities">
+        <Link href="/">
           <a>LOGO</a>
         </Link>
         <Link href="/messages">
