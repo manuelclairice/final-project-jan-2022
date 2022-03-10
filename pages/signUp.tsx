@@ -1,8 +1,10 @@
 import { css } from '@emotion/react';
+import { GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Layout from '../components/Layout';
+import { getValidSessionByToken } from '../util/database';
 import { SignUpResponseBody } from './api/signUp';
 
 // const cardStyle = css`
@@ -86,13 +88,18 @@ const errorStyle = css`
 
 type Errors = { message: string }[];
 
-export default function SignUp() {
+type Props = {
+  refreshUserProfile: () => void;
+  userObject: { username: string };
+};
+
+export default function SignUp(props: Props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<Errors>([]);
   const router = useRouter();
   return (
-    <Layout>
+    <Layout userObject={props.userObject}>
       <Head>
         <title>Sign up</title>
         <meta name="description" content="Sign up to our website" />
@@ -121,7 +128,7 @@ export default function SignUp() {
             setErrors(signUpResponseBody.errors);
             return;
           }
-
+          props.refreshUserProfile();
           await router.push('/');
         }}
       >
@@ -155,4 +162,40 @@ export default function SignUp() {
       </form>
     </Layout>
   );
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  // Redirect from HTTP to HTTPS on Heroku
+  if (
+    context.req.headers.host &&
+    context.req.headers['x-forwarded-proto'] &&
+    context.req.headers['x-forwarded-proto'] !== 'https'
+  ) {
+    return {
+      redirect: {
+        destination: `https://${context.req.headers.host}/login`,
+        permanent: true,
+      },
+    };
+  }
+
+  const token = context.req.cookies.sessionToken;
+
+  if (token) {
+    const session = await getValidSessionByToken(token);
+
+    if (session) {
+      console.log(session);
+      return {
+        redirect: {
+          destination: '/',
+          permanent: false,
+        },
+      };
+    }
+  }
+
+  return {
+    props: {},
+  };
 }

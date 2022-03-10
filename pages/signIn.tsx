@@ -1,9 +1,11 @@
 import { css } from '@emotion/react';
+import { GetServerSidePropsContext } from 'next';
 // import { GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Layout from '../components/Layout';
+import { getValidSessionByToken } from '../util/database';
 import { SignInResponseBody } from './api/signIn';
 
 const formStyle = css`
@@ -87,13 +89,18 @@ const errorStyle = css`
 
 type Errors = { message: string }[];
 
-export default function SignIn() {
+type Props = {
+  refreshUserProfile: () => void;
+  userObject: { username: string };
+};
+
+export default function SignIn(props: Props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<Errors>([]);
   const router = useRouter();
   return (
-    <Layout>
+    <Layout userObject={props.userObject}>
       <Head>
         <title>Sign in</title>
         <meta name="description" content="Sign in to your account" />
@@ -134,8 +141,8 @@ export default function SignIn() {
             await router.push(returnTo);
             return;
           }
-
-          await router.push(`/users/${signInResponseBody.user.id}`);
+          props.refreshUserProfile();
+          await router.push(`/`);
         }}
       >
         <div>
@@ -170,17 +177,38 @@ export default function SignIn() {
   );
 }
 
-// export async function getServerSideProps(context: GetServerSidePropsContext) {
-//   // Redirect from HTTP to HTTPS on Heroku
-//   if (
-//     context.req.headers.host &&
-//     context.req.headers['x-forwarded-proto'] &&
-//     context.req.headers['x-forwarded-proto'] !== 'https'
-//   ) {
-//     return {
-//       redirect: {
-//         destination: `https://${context.req.headers.host}/login`,
-//         permanent: true,
-//       },
-//     };
-//   }
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  // Redirect from HTTP to HTTPS on Heroku
+  if (
+    context.req.headers.host &&
+    context.req.headers['x-forwarded-proto'] &&
+    context.req.headers['x-forwarded-proto'] !== 'https'
+  ) {
+    return {
+      redirect: {
+        destination: `https://${context.req.headers.host}/login`,
+        permanent: true,
+      },
+    };
+  }
+
+  const token = context.req.cookies.sessionToken;
+
+  if (token) {
+    const session = await getValidSessionByToken(token);
+
+    if (session) {
+      console.log(session);
+      return {
+        redirect: {
+          destination: '/',
+          permanent: false,
+        },
+      };
+    }
+  }
+
+  return {
+    props: {},
+  };
+}

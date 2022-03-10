@@ -46,7 +46,6 @@ export async function getServerSideProps(
 ): Promise<GetServerSidePropsResult<{ user?: User }>> {
   const userId = context.query.userId;
 
-  // User id is not correct type
   if (!userId || Array.isArray(userId)) {
     return { props: {} };
   }
