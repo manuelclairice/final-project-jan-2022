@@ -1,13 +1,33 @@
 import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 import Head from 'next/head';
 import Layout from '../../components/Layout';
-import { getUserById, User } from '../../util/database';
+import { getUserById, getValidSessionByToken, User } from '../../util/database';
 
-type Props = {
-  user?: User;
-};
+type Props =
+  | {
+      user?: User;
+    }
+  | {
+      error: string;
+    };
 
 export default function UserDetail(props: Props) {
+  if ('error' in props) {
+    return (
+      <Layout>
+        <Head>
+          <title>You are not allowed to see this page</title>
+          <meta
+            name="description"
+            content="You are not allowed to see this page"
+          />
+        </Head>
+        <h1>oops...</h1>
+        {props.error}
+      </Layout>
+    );
+  }
+
   if (!props.user) {
     return (
       <Layout>
@@ -56,6 +76,16 @@ export async function getServerSideProps(
     context.res.statusCode = 404;
     return {
       props: {},
+    };
+  }
+  const sessionToken = context.req.cookies.sessionToken;
+  const session = await getValidSessionByToken(sessionToken);
+
+  if (!session) {
+    return {
+      props: {
+        error: 'You are not allowed to see this profile, please sign in',
+      },
     };
   }
 

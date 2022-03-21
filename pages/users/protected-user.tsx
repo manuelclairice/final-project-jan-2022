@@ -4,16 +4,21 @@ import Layout from '../../components/Layout';
 import { getUserByValidSessionToken } from '../../util/database';
 
 type Props = {
-  userObject: { username: string };
-  user: { id: number; username: string };
+  userObject: { firstName: string };
+  user: { firstName: string; lastName: string };
 };
 
 export default function ProtectedUser(props: Props) {
   return (
     <Layout userObject={props.userObject}>
       <h1>My profile</h1>
-      <div> user id is {props.user.id}</div>
-      <div> user name is {props.user.username}</div>
+      <div>
+        <div>{props.user.firstName}</div>
+        <div>{props.user.lastName}</div>
+      </div>
+      <div>
+        <h2>My favorite activities</h2>
+      </div>
     </Layout>
   );
 }

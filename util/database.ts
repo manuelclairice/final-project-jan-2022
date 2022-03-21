@@ -116,6 +116,8 @@ export async function deleteExpiredSessions() {
 export type User = {
   id: number;
   username: string;
+  firstName: string;
+  lastName: string;
 };
 
 export type UserWithPasswordHash = User & {
@@ -173,15 +175,59 @@ export async function getUserWithPasswordHashByUsername(username: string) {
   return user && camelcaseKeys(user);
 }
 
-export async function createUser(username: string, passwordHash: string) {
+export async function createUser(
+  username: string,
+  passwordHash: string,
+  firstName: string,
+  lastName: string,
+) {
   const [user] = await sql<[User]>`
   INSERT INTO users
-    (username, password_hash)
+    (username, password_hash, first_name, last_name)
   VALUES
-    (${username}, ${passwordHash})
+    (${username}, ${passwordHash}, ${firstName}, ${lastName})
     RETURNING
     id,
-    username
+    username,
+    first_name,
+    last_name
   `;
   return camelcaseKeys(user);
 }
+
+// ---------- CAREGIVER ----------
+
+export type Caregiver = {
+  id: number;
+  firstName: string;
+  lastName: string;
+  userId: number;
+};
+
+export async function createCaregiver(
+  firstName: string,
+  lastName: string,
+  userId: number,
+) {
+  const [caregiver] = await sql<[Caregiver]>`
+  INSERT INTO caregivers
+    (first_name, last_name, user_id)
+  VALUES
+    (${firstName}, ${lastName}, ${userId})
+    RETURNING
+    id,
+    first_name,
+    last_name
+  `;
+  return camelcaseKeys(caregiver);
+}
+
+// ---------- CLUBS ----------
+
+export type Club = {
+  id: number;
+  username: string;
+  firstName: string;
+  lastName: string;
+  address: string;
+};

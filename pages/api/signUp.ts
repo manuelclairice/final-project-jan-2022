@@ -12,6 +12,8 @@ import {
 type SignUpRequestBody = {
   username: string;
   password: string;
+  firstName: string;
+  lastName: string;
 };
 
 type SignUpNextApiRequest = Omit<NextApiRequest, 'body'> & {
@@ -31,6 +33,10 @@ export default async function signUpHandler(
       typeof request.body.username !== 'string' ||
       !request.body.username ||
       typeof request.body.password !== 'string' ||
+      !request.body.password ||
+      typeof request.body.firstName !== 'string' ||
+      !request.body.username ||
+      typeof request.body.lastName !== 'string' ||
       !request.body.password
     ) {
       response.status(400).json({
@@ -54,7 +60,12 @@ export default async function signUpHandler(
     }
     const passwordHash = await bcrypt.hash(request.body.password, 12);
 
-    const user = await createUser(request.body.username, passwordHash);
+    const user = await createUser(
+      request.body.username,
+      passwordHash,
+      request.body.firstName,
+      request.body.lastName,
+    );
 
     const sessionToken = crypto.randomBytes(64).toString('base64');
 
@@ -66,10 +77,9 @@ export default async function signUpHandler(
       session.token,
     );
 
-    response
-      .status(201)
-      .setHeader('Set-Cookie', serializedCookie)
-      .json({ user: user });
+    response.status(201).setHeader('Set-Cookie', serializedCookie).json({
+      user: user,
+    });
     return;
   }
   response.status(405).json({

@@ -4,7 +4,19 @@ import { AnchorHTMLAttributes } from 'react';
 import { User } from '../util/database';
 
 const headerStyles = css`
-  background-color: #5f83b6;
+  position: relative;
+  /* background-color: #5f83b6; */
+  background: #8360c3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2ebf91,
+    #8360c3
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2ebf91,
+    #8360c3
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 10px 15px;
   border-radius: 4px;
   margin: 8px 8px 20px;
@@ -23,6 +35,11 @@ const headerStyles = css`
   > div:first-child {
     margin-right: auto;
   }
+`;
+
+const userNameStyle = css`
+  font-style: italic;
+  color: #fff;
 `;
 
 type Props = {
@@ -52,7 +69,9 @@ export default function Header(props: Props) {
           <a>My profile</a>
         </Link>
       </div>
-      {props.userObject && <div>Hey {props.userObject.username}!</div>}
+      {props.userObject && (
+        <div css={userNameStyle}>Hey {props.userObject.firstName}!</div>
+      )}
       {props.userObject ? (
         <Anchor href="/logout">Logout</Anchor>
       ) : (
@@ -60,8 +79,8 @@ export default function Header(props: Props) {
           <Link href="/signIn">
             <a>Sign in</a>
           </Link>
-          <Link href="/signUp">
-            <a>Sign up</a>
+          <Link href="/create-profile">
+            <a>Are you a club?</a>
           </Link>
           <Link href="/logout">
             <a>Logout</a>
