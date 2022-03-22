@@ -128,7 +128,9 @@ export async function getUserById(id: number) {
   const [user] = await sql<[User | undefined]>`
     SELECT
       id,
-      username
+      username,
+      first_name,
+      last_name
     FROM
       users
     WHERE
@@ -142,7 +144,9 @@ export async function getUserByValidSessionToken(token: string | undefined) {
   const [user] = await sql<[User | undefined]>`
     SELECT
       users.id,
-      users.username
+      users.username,
+      users.first_name,
+      users.last_name
     FROM
       users,
       sessions

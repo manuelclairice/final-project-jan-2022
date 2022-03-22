@@ -5,19 +5,22 @@ import { getUserByValidSessionToken } from '../../util/database';
 
 type Props = {
   userObject: { firstName: string };
-  user: { firstName: string; lastName: string };
+  user: { id: number; username: string; firstName: string; lastName: string };
 };
 
 export default function ProtectedUser(props: Props) {
   return (
     <Layout userObject={props.userObject}>
-      <h1>My profile</h1>
       <div>
-        <div>{props.user.firstName}</div>
-        <div>{props.user.lastName}</div>
-      </div>
-      <div>
-        <h2>My favorite activities</h2>
+        <div>
+          <h1>My profile</h1>
+          <div> user id is {props.user.id}</div>
+          <div> user name is {props.user.lastName}</div>
+          <div> user name is {props.user.firstName}</div>
+        </div>
+        <div>
+          <h2>My favorite activities</h2>
+        </div>
       </div>
     </Layout>
   );
