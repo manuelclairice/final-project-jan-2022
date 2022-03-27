@@ -3,10 +3,10 @@ import bcrypt from 'bcrypt';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { createSerializedRegisterSessionTokenCookie } from '../../util/cookies';
 import {
+  Club,
+  createClub,
   createSession,
-  createUser,
-  getUserByUsername,
-  User,
+  getClubByUsername,
 } from '../../util/database';
 
 type RegisterClubRequestBody = {
@@ -14,17 +14,21 @@ type RegisterClubRequestBody = {
   password: string;
   firstName: string;
   lastName: string;
+  addressId: number;
+  companyName: string;
+  email: string;
+  hourlyRate: string;
 };
 
-type SignUpNextApiRequest = Omit<NextApiRequest, 'body'> & {
+type RegisterClubNextApiRequest = Omit<NextApiRequest, 'body'> & {
   body: RegisterClubRequestBody;
 };
 
 export type RegisterClubResponseBody =
   | { errors: { message: string }[] }
-  | { user: User };
+  | { club: Club };
 
-export default async function signUpHandler(
+export default async function clubRegistrationHandler(
   request: RegisterClubNextApiRequest,
   response: NextApiResponse<RegisterClubResponseBody>,
 ) {
@@ -35,9 +39,9 @@ export default async function signUpHandler(
       typeof request.body.password !== 'string' ||
       !request.body.password ||
       typeof request.body.firstName !== 'string' ||
-      !request.body.username ||
+      !request.body.firstName ||
       typeof request.body.lastName !== 'string' ||
-      !request.body.password
+      !request.body.lastName
     ) {
       response.status(400).json({
         errors: [
@@ -48,7 +52,7 @@ export default async function signUpHandler(
       });
       return;
     }
-    if (await getUserByUsername(request.body.username)) {
+    if (await getClubByUsername(request.body.username)) {
       response.status(409).json({
         errors: [
           {
@@ -60,16 +64,20 @@ export default async function signUpHandler(
     }
     const passwordHash = await bcrypt.hash(request.body.password, 12);
 
-    const user = await createUser(
+    const club = await createClub(
       request.body.username,
       passwordHash,
       request.body.firstName,
       request.body.lastName,
+      request.body.addressId,
+      request.body.companyName,
+      request.body.email,
+      request.body.hourlyRate,
     );
 
     const sessionToken = crypto.randomBytes(64).toString('base64');
 
-    const session = await createSession(sessionToken, user.id);
+    const session = await createSession(sessionToken, club.id);
 
     console.log(session);
 
@@ -78,7 +86,7 @@ export default async function signUpHandler(
     );
 
     response.status(201).setHeader('Set-Cookie', serializedCookie).json({
-      user: user,
+      club: club,
     });
     return;
   }

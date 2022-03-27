@@ -2,10 +2,10 @@ import { css } from '@emotion/react';
 import { GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import { getValidSessionByToken } from '../util/database';
-import { SignUpResponseBody } from './api/signUp';
+import { RegisterClubResponseBody } from './api/club-registration';
 
 const signUpPageStyle = css`
   justify-content: center;
@@ -44,22 +44,6 @@ const formBoxTitleStyle = css`
   text-align: center;
 `;
 
-// const userType = css`
-//   width: 220px;
-//   margin: 35px auto;
-//   position: relative;
-//   border: 1px solid #999;
-//   border-radius: 30px;
-// `;
-// const userTypeButtonStyle = css`
-//   padding: 10px 30px;
-//   cursor: pointer;
-//   background: transparent;
-//   border: 0;
-//   outline: none;
-//   position: relative;
-// `;
-
 const formStyle = css`
   top: 180px;
   padding: 30px 80px;
@@ -91,18 +75,6 @@ const formStyle = css`
   }
 `;
 
-// const userTypeDivButtonStyle = css`
-//   top: 0;
-//   left: 0;
-/* position: absolute; */
-/* width: 110px;
-  height: 100%; */
-//   background-color: #fff;
-//   background: linear-gradient(to right, #2ebf91, #8360c3);
-//   border-radius: 30px;
-//   transition: 0.5s;
-// `;
-
 const signUpButtonStyle = css`
   position: relative;
   align-items: center;
@@ -125,24 +97,42 @@ const errorStyle = css`
 
 type Errors = { message: string }[];
 
-type Props = {
-  refreshUserProfile: () => void;
+export type Props = {
+  refreshClubProfile: () => void;
   userObject: { firstName: string };
 };
 
-export default function SignUp(props: Props) {
+export default function RegisterClub(props: Props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [address, setAddress] = useState({
+    street: '',
+    city: '',
+    postCode: '',
+  });
+  const [companyName, setCompanyName] = useState('');
+  const [email, setEmail] = useState('');
+  const [hourlyRate, setHourlyRate] = useState('');
   const [errors, setErrors] = useState<Errors>([]);
   const router = useRouter();
+
+  const updateAddress = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setAddress({
+      ...address,
+      [event.target.name]: event.target.value,
+    });
+  };
   return (
     <div css={signUpPageStyle}>
       <Layout userObject={props.userObject}>
         <Head>
-          <title>Sign up</title>
-          <meta name="description" content="Sign up to our website" />
+          <title>Register your Club</title>
+          <meta
+            name="description"
+            content="Register your Club to our website"
+          />
         </Head>
         <div css={formBoxStyle}>
           <div css={formBoxTitleStyle}>
@@ -153,22 +143,31 @@ export default function SignUp(props: Props) {
             css={formStyle}
             onSubmit={async (event) => {
               event.preventDefault();
-              const signUpResponse = await fetch('/api/signUp', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
+              const registerClubResponse = await fetch(
+                '/api/club-registration',
+                {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    username: username,
+                    password: password,
+                    firstName: firstName,
+                    lastName: lastName,
+                    address: address,
+                    companyName: companyName,
+                    email: email,
+                    hourlyRate: hourlyRate,
+                  }),
                 },
-                body: JSON.stringify({
-                  username: username,
-                  password: password,
-                }),
-              });
+              );
 
-              const signUpResponseBody =
-                (await signUpResponse.json()) as SignUpResponseBody;
+              const registerClubResponseBody =
+                (await registerClubResponse.json()) as RegisterClubResponseBody;
 
-              if ('errors' in signUpResponseBody) {
-                setErrors(signUpResponseBody.errors);
+              if ('errors' in registerClubResponseBody) {
+                setErrors(registerClubResponseBody.errors);
                 return;
               }
               props.refreshUserProfile();
@@ -205,6 +204,59 @@ export default function SignUp(props: Props) {
                   onChange={(event) => setLastName(event.currentTarget.value)}
                 />
               </div>
+              <br />
+              <br />
+              <div>
+                <input
+                  placeholder="Company Name"
+                  value={companyName}
+                  onChange={(event) =>
+                    setCompanyName(event.currentTarget.value)
+                  }
+                />
+              </div>
+              <div>
+                <input
+                  placeholder="Street"
+                  value={address.street}
+                  name="street"
+                  onChange={updateAddress}
+                />
+              </div>
+              <div>
+                <input
+                  placeholder="City"
+                  value={address.city}
+                  name="city"
+                  onChange={updateAddress}
+                />
+              </div>
+              <div>
+                <input
+                  placeholder="Post Code"
+                  value={address.postCode}
+                  name="postCode"
+                  onChange={updateAddress}
+                />
+              </div>
+
+              <br />
+              <br />
+              <div>
+                <input
+                  placeholder="Email"
+                  value={email}
+                  onChange={(event) => setEmail(event.currentTarget.value)}
+                />
+              </div>
+              <div>
+                <input
+                  placeholder="Hourly rate"
+                  value={hourlyRate}
+                  onChange={(event) => setHourlyRate(event.currentTarget.value)}
+                />
+              </div>
+
               <br />
               <br />
 

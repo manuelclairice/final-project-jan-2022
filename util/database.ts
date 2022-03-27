@@ -226,12 +226,52 @@ export async function createCaregiver(
   return camelcaseKeys(caregiver);
 }
 
-// ---------- CLUBS ----------
+// -----------------------------------------------
+// -------------------- CLUBS --------------------
+// -----------------------------------------------
 
 export type Club = {
   id: number;
   username: string;
   firstName: string;
   lastName: string;
-  address: string;
+  addressId: number;
+  companyName: string;
+  email: string;
+  hourlyRate: string;
 };
+
+export async function createClub(
+  username: string,
+  passwordHash: string,
+  firstName: string,
+  lastName: string,
+  addressId: number,
+  companyName: string,
+  email: string,
+  hourlyRate: string,
+) {
+  const [club] = await sql<[Club]>`
+  INSERT INTO clubs
+    (username, password_hash, first_name, last_name, address_id, company_name, email, hourly_rate)
+  VALUES
+    (${username}, ${passwordHash}, ${firstName}, ${lastName},${addressId}, ${companyName}, ${email}, ${hourlyRate})
+    RETURNING
+    id,
+    username,
+    first_name,
+    last_name,
+    address_id,
+    company_name,
+    email,
+    hourly_rate
+
+  `;
+  return camelcaseKeys(club);
+}
+export async function getClubByUsername(username: string) {
+  const [club] = await sql<[{ id: number } | undefined]>`
+    SELECT id FROM clubs WHERE username = ${username}
+  `;
+  return club && camelcaseKeys(club);
+}

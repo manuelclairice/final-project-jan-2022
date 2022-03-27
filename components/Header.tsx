@@ -79,7 +79,7 @@ export default function Header(props: Props) {
           <Link href="/signIn">
             <a>Sign in</a>
           </Link>
-          <Link href="/create-profile">
+          <Link href="/club-registration-steps">
             <a>Are you a club?</a>
           </Link>
           <Link href="/logout">
