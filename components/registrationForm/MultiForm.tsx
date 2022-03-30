@@ -1,11 +1,11 @@
 import { css } from '@emotion/react';
 import { useRouter } from 'next/router';
-import React, { ChangeEvent, useState } from 'react';
-import { SignUpResponseBody } from '../../pages/api/signUp';
+import React, { useState } from 'react';
+// import { SignUpResponseBody } from '../../pages/api/signUp';
 import StepOne from './StepOne';
 import StepTwo from './StepTwo';
-import StepThree from './StepThree';
-import StepFour from './StepFour';
+// import StepThree from './StepThree';
+// import StepFour from './StepFour';
 
 const signUpPageStyle = css`
   justify-content: center;
@@ -67,25 +67,25 @@ const formStyle = css`
   }
 `;
 
-const signUpButtonStyle = css`
-  position: relative;
-  align-items: center;
-  width: 85%;
-  padding: 10px 30px;
-  display: block;
-  margin: auto;
-  background-color: #ab0068;
-  color: #fff;
-  border: 0;
-  outline: none;
-  font-weight: bold;
-  border-radius: 20px;
-  cursor: pointer;
-`;
+// const signUpButtonStyle = css`
+//   position: relative;
+//   align-items: center;
+//   width: 85%;
+//   padding: 10px 30px;
+//   display: block;
+//   margin: auto;
+//   background-color: #ab0068;
+//   color: #fff;
+//   border: 0;
+//   outline: none;
+//   font-weight: bold;
+//   border-radius: 20px;
+//   cursor: pointer;
+// `;
 
-const errorStyle = css`
-  color: #e50000;
-`;
+// const errorStyle = css`
+//   color: #e50000;
+// `;
 
 export type Errors = { message: string }[];
 
@@ -94,10 +94,10 @@ export type FormValues = {
   password: string;
   firstName: string;
   lastName: string;
-  // address: string;
-  // activities: string;
-  // ageGroups: string;
-  // introduction: string;
+  address: string;
+  activities: string;
+  ageGroups: string;
+  introduction: string;
 };
 
 export type Props = {
@@ -108,22 +108,22 @@ export type Props = {
 export default function MultiForm(props: Props) {
   const [step, setStep] = useState(1);
   // const [errors, setErrors] = useState<Errors>([]);
-  // const [formValues, setFormValues] = useState<FormValues>({
-  //   username: '',
-  //   password: '',
-  //   firstName: '',
-  //   lastName: '',
-  //   address: '',
-  //   activities: '',
-  //   ageGroups: '',
-  //   introduction: '',
-  // });
+  const [formValues, setFormValues] = useState<FormValues>({
+    username: '',
+    password: '',
+    firstName: '',
+    lastName: '',
+    address: '',
+    activities: '',
+    ageGroups: '',
+    introduction: '',
+  });
 
   const nextStep = () => {
     if (step < 4) {
       setStep(step + 1);
     } else if (step === 4) {
-      console.log(formValues);
+      // console.log(formValues);
     }
   };
 
@@ -170,31 +170,31 @@ export default function MultiForm(props: Props) {
           css={formStyle}
           onSubmit={async (event) => {
             event.preventDefault();
-            const signUpResponse = await fetch('/api/signUp', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                username: formValues.username,
-                password: formValues.password,
-                firstName: formValues.firstName,
-                lastName: formValues.lastName,
-                address: formValues.address,
-                activities: formValues.activities,
-                ageGroups: formValues.ageGroups,
-                introduction: formValues.introduction,
-              }),
-            });
+            //   const signUpResponse = await fetch('/api/signUp', {
+            //     method: 'POST',
+            //     headers: {
+            //       'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify({
+            // username: username,
+            // password: password,
+            // firstName: firstName,
+            // lastName: lastName,
+            // address: address,
+            // activities: activities,
+            // ageGroups: ageGroups,
+            // introduction: introduction,
+            //   }),
+            // });
 
-            const signUpResponseBody =
-              (await signUpResponse.json()) as SignUpResponseBody;
+            // const signUpResponseBody =
+            //   (await signUpResponse.json()) as SignUpResponseBody;
 
-            if ('errors' in signUpResponseBody) {
-              setErrors(signUpResponseBody.errors);
-              return;
-            }
-            props.refreshUserProfile();
+            // if ('errors' in signUpResponseBody) {
+            //   setErrors(signUpResponseBody.errors);
+            //   return;
+            // }
+            // props.refreshUserProfile();
             await router.push('/');
           }}
         >
@@ -203,8 +203,8 @@ export default function MultiForm(props: Props) {
               {
                 1: <StepOne refreshUserProfile={props.refreshUserProfile} />,
                 2: <StepTwo handleChange={handleChange} />,
-                3: <StepThree handleChange={handleChange} />,
-                4: <StepFour handleChange={handleChange} />,
+                // 3: <StepThree handleChange={handleChange} />,
+                // 4: <StepFour handleChange={handleChange} />,
               }[step]
             }
           </div>

@@ -1,7 +1,7 @@
 import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
 import { useState } from 'react';
 
-const StepThree = ({ handleChange }) => {
+const StepThree = () => {
   const [artActivities, setArtActivities] = useState({
     crafting: '',
     drawing: '',
@@ -14,26 +14,30 @@ const StepThree = ({ handleChange }) => {
     ageGroupFour: '',
     ageGroupFive: '',
   });
-  const [musicActivities, setMusicActivities] = useState({
-    guitar: '',
-    piano: '',
-    drums: '',
-  });
-  const [cookingActivities, setCookingActivities] = useState({
-    breadbaking: '',
-    cakeDecoration: '',
-    breakfast: '',
-  });
-  const [danceActivities, setDanceActivities] = useState({
-    ballet: '',
-    breakDance: '',
-    modernJazz: '',
-  });
-  const [sportActivities, setSportActivities] = useState({
-    swimming: '',
-    gymnastic: '',
-    judo: '',
-  });
+  // const [musicActivities, setMusicActivities] = useState({
+  //   guitar: '',
+  //   piano: '',
+  //   drums: '',
+  // });
+  // const [cookingActivities, setCookingActivities] = useState({
+  //   breadbaking: '',
+  //   cakeDecoration: '',
+  //   breakfast: '',
+  // });
+  // const [danceActivities, setDanceActivities] = useState({
+  //   ballet: '',
+  //   breakDance: '',
+  //   modernJazz: '',
+  // });
+  // const [sportActivities, setSportActivities] = useState({
+  //   swimming: '',
+  //   gymnastic: '',
+  //   judo: '',
+  // });
+  // const handleChange =
+  //   (name: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
+  //     setFormValues({ ...formValues, [name]: event.target.value });
+  //   };
 
   const updateArtActivities = (event: React.ChangeEvent<HTMLInputElement>) => {
     setArtActivities({
@@ -66,7 +70,7 @@ const StepThree = ({ handleChange }) => {
         <br />
         <div onChange={updateAgeGroup}>
           <h3>Age Groups </h3>
-          <Form>
+          {/* <Form>
             {['checkbox'].map((type) => (
               <div key={`inline-${type}`} className="mb-3">
                 <Form.Check
@@ -74,7 +78,7 @@ const StepThree = ({ handleChange }) => {
                   inline
                   label="0 to 3"
                   name="ageGroupOne"
-                  type={type}
+                  // type={type}
                   id={`inline-${type}-1`}
                 />
                 <Form.Check
@@ -82,7 +86,7 @@ const StepThree = ({ handleChange }) => {
                   inline
                   label="4 to 6"
                   name="ageGroupTwo"
-                  type={type}
+                  // type={type}
                   id={`inline-${type}-2`}
                 />
                 <Form.Check
@@ -90,7 +94,7 @@ const StepThree = ({ handleChange }) => {
                   inline
                   label="7 to 10"
                   name="ageGroupThree"
-                  type={type}
+                  // type={type}
                   id={`inline-${type}-3`}
                 />
                 <Form.Check
@@ -98,7 +102,7 @@ const StepThree = ({ handleChange }) => {
                   inline
                   label="11 to 14"
                   name="ageGroupFour"
-                  type={type}
+                  // type={type}
                   id={`inline-${type}-4`}
                 />
                 <Form.Check
@@ -106,12 +110,12 @@ const StepThree = ({ handleChange }) => {
                   inline
                   label="15 to 18"
                   name="ageGroupFive"
-                  type={type}
+                  // type={type}
                   id={`inline-${type}-5`}
                 />
               </div>
-            ))}
-          </Form>
+            ))} */}
+          {/* </Form> */}
         </div>
         <Col md>
           <Form.Select aria-label="Floating label select example">

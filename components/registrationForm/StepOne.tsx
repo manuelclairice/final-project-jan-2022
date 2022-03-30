@@ -23,6 +23,10 @@ const StepOne = (props: Props) => {
     password: '',
     firstName: '',
     lastName: '',
+    address: '',
+    activities: '',
+    ageGroups: '',
+    introduction: '',
   });
   const handleChange =
     (name: string) => (event: React.ChangeEvent<HTMLInputElement>) => {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function StepFour(handleChange) {
+export default function StepFour() {
   const [address, setAddress] = useState({
     street: '',
     city: '',
