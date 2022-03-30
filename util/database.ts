@@ -31,11 +31,12 @@ const sql = connectOneTimeToDatabase();
 export type Activity = {
   id: number;
   name: string;
+  descritpion: string;
 };
 
 export async function getActivities() {
   const activities = await sql<Activity[]>`
-  SELECT * FROM activities;`;
+  SELECT * FROM activities`;
   console.log(activities);
 
   return activities.map((activity) => camelcaseKeys(activity));
@@ -43,8 +44,109 @@ export async function getActivities() {
 
 export async function getActivityById(id: number) {
   const [activity] = await sql<[Activity | undefined]>`
-  SELECT * FROM activities WHERE id = ${id};`;
+  SELECT * FROM activities WHERE id = ${id}`;
   return activity;
+}
+
+export async function createActivityType(name: string) {
+  const [activityType] = await sql<[ActivityType]>`
+  INSERT INTO
+    activity_types (name)
+  VALUES
+    (${name})
+  RETURNING
+    *`;
+  return camelcaseKeys(activityType);
+}
+
+export async function updateActivityTypeById(id: number, name: string) {
+  const [activityType] = await sql<[ActivityType]>`
+  UPDATE
+    activity_types
+  SET
+    name = ${name}
+  WHERE
+    id = ${id}
+  RETURNING
+    *`;
+  return camelcaseKeys(activityType);
+}
+
+export async function deleteActivityTypeById(id: number) {
+  const [activityType] = await sql<[ActivityType]>`
+  DELETE FROM
+    activity_types
+  WHERE
+    id = ${id}
+  RETURNING
+    *`;
+  return camelcaseKeys(activityType);
+}
+
+export type ActivityType = {
+  id: number;
+  name: string;
+};
+
+export async function getActivityTypes() {
+  const activityTypes = await sql<ActivityType[]>`
+  SELECT
+    *
+  FROM
+    activity_types`;
+  console.log(activityTypes);
+
+  return activityTypes.map((activityType) => camelcaseKeys(activityType));
+}
+
+export async function getActivityTypeById(id: number) {
+  const [activityType] = await sql`
+  SELECT
+    id,
+    name
+  FROM
+    activity_types
+  WHERE
+    id = ${id}`;
+  console.log(activityType);
+  console.log(id);
+  return activityType;
+}
+
+export async function getActivityByTypeId(activityId: number) {
+  const [activityType] = await sql<[Activity | undefined]>`
+  SELECT
+    activity_types.id as activity_type_id,
+    activities.name as activity_name,
+    activities.description as activity_description
+  FROM
+    activities,
+    activity_types
+  WHERE
+
+    activities.activity_type_id = activity_types.id AND
+    activities.id = ${activityId}`;
+
+  return activityType && camelcaseKeys(activityType);
+}
+
+export type AgeGroup = {
+  id: number;
+  name: string;
+};
+
+export async function getAgeGroups() {
+  const ageGroups = await sql<Activity[]>`
+  SELECT * FROM age_groups;`;
+  console.log(ageGroups);
+
+  return ageGroups.map((ageGroup) => camelcaseKeys(ageGroup));
+}
+
+export async function getAgeGroupById(id: number) {
+  const [ageGroup] = await sql<[AgeGroup | undefined]>`
+  SELECT * FROM age_groups WHERE id = ${id};`;
+  return ageGroup;
 }
 
 // ---------- SESSIONS ----------
@@ -271,7 +373,37 @@ export async function createClub(
 }
 export async function getClubByUsername(username: string) {
   const [club] = await sql<[{ id: number } | undefined]>`
-    SELECT id FROM clubs WHERE username = ${username}
+    SELECT
+    clubs.id,
+    users.username
+
+    FROM
+    clubs,
+    users
+    WHERE
+    user_id = users.id AND
+    username = ${username}
+  `;
+  return club && camelcaseKeys(club);
+}
+
+export async function getClubById(id: number) {
+  const [club] = await sql<[Club | undefined]>`
+    SELECT
+      id,
+      activity_types_id,
+      age_groups_id,
+      company_name,
+      street,
+      city,
+      post_code,
+      email,
+      hourly_rate
+    FROM
+      clubs
+    WHERE
+      id = ${id}
+
   `;
   return club && camelcaseKeys(club);
 }

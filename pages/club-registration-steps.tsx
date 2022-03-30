@@ -1,7 +1,7 @@
 import { GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
 import Layout from '../components/Layout';
-import Form from '../components/registrationForm/Form';
+import MultiForm from '../components/registrationForm/MultiForm';
 import { getValidSessionByToken } from '../util/database';
 
 type Props = {
@@ -18,7 +18,7 @@ export default function RegistrationSteps(props: Props) {
           <meta name="description" content="Sign up to our website" />
         </Head>
         <div>
-          <Form refreshUserProfile={props.refreshUserProfile} />
+          <MultiForm refreshUserProfile={props.refreshUserProfile} />
         </div>
       </Layout>
     </div>

@@ -98,7 +98,7 @@ const errorStyle = css`
 type Errors = { message: string }[];
 
 export type Props = {
-  refreshClubProfile: () => void;
+  refreshUserProfile: () => void;
   userObject: { firstName: string };
 };
 

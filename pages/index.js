@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../components/Layout';
+import { getActivityTypes } from '../util/database';
+// import { getActivityTypeById } from '../util/database';
 
 const activitiesButtonsStyle = css`
   display: flex;
@@ -86,43 +88,61 @@ export default function Home(props) {
           odio aenean.
         </h3>
       </div>
-      <div css={activitiesButtonsStyle}>
-        <div css={activitiesButtonsStyle}>
-          <Link href="/activities/art">
-            <a>
-              <button css={artButtonStyle}>Art</button>
-            </a>
-          </Link>
+      <section>
+        <div
+          // key={`activities- ${activityType.id}`}
+          css={activitiesButtonsStyle}
+        >
+          <div css={activitiesButtonsStyle}>
+            <Link href="activities/1">
+              <a>
+                <button css={artButtonStyle}>Art</button>
+              </a>
+            </Link>
+          </div>
+          <div css={activitiesButtonsStyle}>
+            <Link href="/activities/2">
+              <a>
+                <button css={musicButtonStyle}>Music</button>
+              </a>
+            </Link>
+          </div>
+          <div css={activitiesButtonsStyle}>
+            <Link href="/activities/3">
+              <a>
+                <button css={cookingButtonStyle}>Cooking</button>
+              </a>
+            </Link>
+          </div>
+          <div css={activitiesButtonsStyle}>
+            <Link href="/activities/4">
+              <a>
+                <button css={danceButtonStyle}>Dance</button>
+              </a>
+            </Link>
+          </div>
+          <div css={activitiesButtonsStyle}>
+            <Link href="/activities/5">
+              <a>
+                <button css={sportButtonStyle}>Sport</button>
+              </a>
+            </Link>
+          </div>
         </div>
-        <div css={activitiesButtonsStyle}>
-          <Link href="/activities/music">
-            <a>
-              <button css={musicButtonStyle}>Music</button>
-            </a>
-          </Link>
-        </div>
-        <div css={activitiesButtonsStyle}>
-          <Link href="/activities/cooking">
-            <a>
-              <button css={cookingButtonStyle}>Cooking</button>
-            </a>
-          </Link>
-        </div>
-        <div css={activitiesButtonsStyle}>
-          <Link href="/activities/dance">
-            <a>
-              <button css={danceButtonStyle}>Dance</button>
-            </a>
-          </Link>
-        </div>
-        <div css={activitiesButtonsStyle}>
-          <Link href="/activities/sport">
-            <a>
-              <button css={sportButtonStyle}>Sport</button>
-            </a>
-          </Link>
-        </div>
-      </div>
+      </section>
     </Layout>
   );
+}
+
+export async function getServerSideProps() {
+  // const activityTypeId = context.query.activityTypeId;
+  const activityTypes = await getActivityTypes();
+  console.log(activityTypes);
+
+  return {
+    props: {
+      activityTypes,
+      // activityTypeId,
+    },
+  };
 }
