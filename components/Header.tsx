@@ -57,38 +57,36 @@ function Anchor({
 
 export default function Header(props: Props) {
   return (
-    <div css={headerStyles}>
-      <header>
-        <div>
-          <Link href="/">
-            <a>Vienna KidsClub</a>
+    <header css={headerStyles}>
+      <div>
+        <Link href="/">
+          <a>Vienna KidsClub</a>
+        </Link>
+        <Link href="/activities">
+          <a>Activities</a>
+        </Link>
+        <Link href="users/protected-user">
+          <a>My profile</a>
+        </Link>
+      </div>
+      {props.userObject && (
+        <div css={userNameStyle}>Hey {props.userObject.firstName}!</div>
+      )}
+      {props.userObject ? (
+        <Anchor href="/logout">Logout</Anchor>
+      ) : (
+        <>
+          <Link href="/signIn">
+            <a>Sign in</a>
           </Link>
-          <Link href="/activities">
-            <a>Activities</a>
+          <Link href="/club-registration-steps">
+            <a>Are you a club?</a>
           </Link>
-          <Link href="users/protected-user">
-            <a>My profile</a>
+          <Link href="/logout">
+            <a>Logout</a>
           </Link>
-        </div>
-        {props.userObject && (
-          <div css={userNameStyle}>Hey {props.userObject.firstName}!</div>
-        )}
-        {props.userObject ? (
-          <Anchor href="/logout">Logout</Anchor>
-        ) : (
-          <>
-            <Link href="/signIn">
-              <a>Sign in</a>
-            </Link>
-            <Link href="/club-registration-steps">
-              <a>Are you a club?</a>
-            </Link>
-            <Link href="/logout">
-              <a>Logout</a>
-            </Link>
-          </>
-        )}
-      </header>
-    </div>
+        </>
+      )}
+    </header>
   );
 }

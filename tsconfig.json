@@ -12,6 +12,7 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
+    "jsxImportSource": "@emotion/react",
     "forceConsistentCasingInFileNames": true,
     "jsx": "react-jsx",
     "noEmit": true,
