@@ -8,7 +8,7 @@ type Props =
       user?: User;
     }
   | {
-      error: string;
+      error: { error: string };
     };
 
 export default function UserDetail(props: Props) {
@@ -83,9 +83,7 @@ export async function getServerSideProps(
 
   if (!session) {
     return {
-      props: {
-        error: 'You are not allowed to see this profile, please sign in',
-      },
+      props: {},
     };
   }
 
