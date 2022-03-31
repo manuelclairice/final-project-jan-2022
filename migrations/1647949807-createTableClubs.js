@@ -3,7 +3,7 @@ exports.up = async (sql) => {
   await sql`
 	CREATE TABLE clubs (
 	  id integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-	  user_id integer REFERENCES users (id) ON DELETE CASCADE,
+
 		age_groups_id integer REFERENCES age_groups (id) ON DELETE CASCADE,
 		activity_types_id integer REFERENCES activity_types (id) ON DELETE CASCADE,
 		company_name varchar(50) NOT NULL,
@@ -21,3 +21,5 @@ exports.down = async (sql) => {
   await sql`
 	DROP TABLE clubs`;
 };
+
+// user_id integer REFERENCES users (id) ON DELETE CASCADE,

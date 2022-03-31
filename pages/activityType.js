@@ -2,8 +2,8 @@ import { css } from '@emotion/react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import Layout from '../../components/Layout';
-import { getActivityTypeById } from '../../util/database';
+import Layout from '../components/Layout';
+import { getActivityTypes } from '../util/database';
 
 const activitiesButtonsStyle = css`
   display: flex;
@@ -69,7 +69,7 @@ export default function ArtPage(props) {
       <Image src="/art-hero.jpg" width="1600" height="500" />
       <div>
         <div>
-          <h1>{props.activityType.name} activities</h1>
+          <h1>{props.activityTypes.name} activities</h1>
         </div>
         <div>
           <br />
@@ -109,18 +109,18 @@ export default function ArtPage(props) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const activityTypeId = context.query.activityTypeId;
+export async function getServerSideProps() {
+  // const activityTypeId = context.query.activityType;
 
-  const activityType = await getActivityTypeById(activityTypeId);
+  const activityTypes = await getActivityTypes();
 
-  console.log(activityType);
-  console.log(activityTypeId);
+  console.log(activityTypes);
+  // console.log(activityTypeId);
 
   return {
     props: {
-      activityType,
-      activityTypeId,
+      activityTypes,
+      // activityTypeId,
     },
   };
 }

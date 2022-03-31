@@ -102,8 +102,7 @@ export async function getActivityTypes() {
 export async function getActivityTypeById(id: number) {
   const [activityType] = await sql`
   SELECT
-    id,
-    name
+    *
   FROM
     activity_types
   WHERE
@@ -334,37 +333,33 @@ export async function createCaregiver(
 
 export type Club = {
   id: number;
-  username: string;
-  firstName: string;
-  lastName: string;
-  addressId: number;
   companyName: string;
+  street: string;
+  city: string;
+  postCode: number;
   email: string;
   hourlyRate: string;
 };
 
 export async function createClub(
-  username: string,
-  passwordHash: string,
-  firstName: string,
-  lastName: string,
-  addressId: number,
   companyName: string,
+  street: string,
+  city: string,
+  postCode: number,
   email: string,
   hourlyRate: string,
 ) {
   const [club] = await sql<[Club]>`
   INSERT INTO clubs
-    (username, password_hash, first_name, last_name, address_id, company_name, email, hourly_rate)
+    (company_name, street, city, post_code, email, hourly_rate)
   VALUES
-    (${username}, ${passwordHash}, ${firstName}, ${lastName},${addressId}, ${companyName}, ${email}, ${hourlyRate})
+    ( ${companyName},${street}, ${city}, ${postCode}, ${email}, ${hourlyRate})
     RETURNING
     id,
-    username,
-    first_name,
-    last_name,
-    address_id,
     company_name,
+    street,
+    city,
+    post_code,
     email,
     hourly_rate
 

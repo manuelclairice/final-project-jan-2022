@@ -14,9 +14,8 @@ export default function ProtectedUser(props: Props) {
       <div>
         <div>
           <h1>My profile</h1>
-          <div> user id is {props.user.id}</div>
           <div> user name is {props.user.lastName}</div>
-          <div> user name is {props.user.firstName}</div>
+          <div> Welcome back {props.user.firstName}</div>
         </div>
         <div>
           <h2>My favorite activities</h2>

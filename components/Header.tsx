@@ -60,7 +60,7 @@ export default function Header(props: Props) {
     <header css={headerStyles}>
       <div>
         <Link href="/">
-          <a>LOGO</a>
+          <a>Vienna KidsClub</a>
         </Link>
         <Link href="/activities">
           <a>Activities</a>
