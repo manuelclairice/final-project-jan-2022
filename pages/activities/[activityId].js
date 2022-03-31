@@ -29,6 +29,9 @@ export default function SingleActivity(props) {
         <div>{props.club.postCode}</div>
         <div>{props.club.email}</div>
         <div>{props.club.hourlyRate} euro/h</div>
+        <div>
+          <button>Get in touch</button>
+        </div>
       </div>
       <div>
         <Image
@@ -44,17 +47,7 @@ export default function SingleActivity(props) {
         <div>{props.club.hourlyRate} euro/h</div>
       </div>
       <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.png`}
-          width="200"
-          height="200"
-        />
-        <div>{props.club.companyName}</div>
-        <div>{props.club.street}</div>
-        <div>{props.club.city}</div>
-        <div>{props.club.postCode}</div>
-        <div>{props.club.email}</div>
-        <div>{props.club.hourlyRate} euro/h</div>
+        <button>Get in touch</button>
       </div>
       <div>
         <Image
@@ -70,17 +63,7 @@ export default function SingleActivity(props) {
         <div>{props.club.hourlyRate} euro/h</div>
       </div>
       <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.png`}
-          width="200"
-          height="200"
-        />
-        <div>{props.club.companyName}</div>
-        <div>{props.club.street}</div>
-        <div>{props.club.city}</div>
-        <div>{props.club.postCode}</div>
-        <div>{props.club.email}</div>
-        <div>{props.club.hourlyRate} euro/h</div>
+        <button>Get in touch</button>
       </div>
       <div>
         <Image
@@ -96,17 +79,7 @@ export default function SingleActivity(props) {
         <div>{props.club.hourlyRate} euro/h</div>
       </div>
       <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.png`}
-          width="200"
-          height="200"
-        />
-        <div>{props.club.companyName}</div>
-        <div>{props.club.street}</div>
-        <div>{props.club.city}</div>
-        <div>{props.club.postCode}</div>
-        <div>{props.club.email}</div>
-        <div>{props.club.hourlyRate} euro/h</div>
+        <button>Get in touch</button>
       </div>
       <div>
         <Image
@@ -120,6 +93,57 @@ export default function SingleActivity(props) {
         <div>{props.club.postCode}</div>
         <div>{props.club.email}</div>
         <div>{props.club.hourlyRate} euro/h</div>
+      </div>
+      <div>
+        <button>Get in touch</button>
+      </div>
+      <div>
+        <Image
+          src={`/images/activities/${props.activity.name}.png`}
+          width="200"
+          height="200"
+        />
+        <div>{props.club.companyName}</div>
+        <div>{props.club.street}</div>
+        <div>{props.club.city}</div>
+        <div>{props.club.postCode}</div>
+        <div>{props.club.email}</div>
+        <div>{props.club.hourlyRate} euro/h</div>
+      </div>
+      <div>
+        <button>Get in touch</button>
+      </div>
+      <div>
+        <Image
+          src={`/images/activities/${props.activity.name}.png`}
+          width="200"
+          height="200"
+        />
+        <div>{props.club.companyName}</div>
+        <div>{props.club.street}</div>
+        <div>{props.club.city}</div>
+        <div>{props.club.postCode}</div>
+        <div>{props.club.email}</div>
+        <div>{props.club.hourlyRate} euro/h</div>
+      </div>
+      <div>
+        <button>Get in touch</button>
+      </div>
+      <div>
+        <Image
+          src={`/images/activities/${props.activity.name}.png`}
+          width="200"
+          height="200"
+        />
+        <div>{props.club.companyName}</div>
+        <div>{props.club.street}</div>
+        <div>{props.club.city}</div>
+        <div>{props.club.postCode}</div>
+        <div>{props.club.email}</div>
+        <div>{props.club.hourlyRate} euro/h</div>
+      </div>
+      <div>
+        <button>Get in touch</button>
       </div>
     </Layout>
   );
