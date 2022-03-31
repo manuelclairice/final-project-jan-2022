@@ -14,7 +14,9 @@ type RegisterClubRequestBody = {
   password: string;
   firstName: string;
   lastName: string;
-  addressId: number;
+  street: string;
+  city: string;
+  postCode: number;
   companyName: string;
   email: string;
   hourlyRate: string;
@@ -41,7 +43,19 @@ export default async function clubRegistrationHandler(
       typeof request.body.firstName !== 'string' ||
       !request.body.firstName ||
       typeof request.body.lastName !== 'string' ||
-      !request.body.lastName
+      !request.body.lastName ||
+      typeof request.body.companyName !== 'string' ||
+      !request.body.companyName ||
+      typeof request.body.street !== 'string' ||
+      !request.body.street ||
+      typeof request.body.city !== 'string' ||
+      !request.body.city ||
+      typeof request.body.postCode !== 'number' ||
+      !request.body.postCode ||
+      typeof request.body.email !== 'string' ||
+      !request.body.email ||
+      typeof request.body.hourlyRate !== 'string' ||
+      !request.body.hourlyRate
     ) {
       response.status(400).json({
         errors: [
@@ -69,8 +83,10 @@ export default async function clubRegistrationHandler(
       passwordHash,
       request.body.firstName,
       request.body.lastName,
-      request.body.addressId,
       request.body.companyName,
+      request.body.street,
+      request.body.city,
+      request.body.postCode,
       request.body.email,
       request.body.hourlyRate,
     );

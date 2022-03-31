@@ -336,6 +336,10 @@ export async function createCaregiver(
 
 export type Club = {
   id: number;
+  username: string;
+  passwordHash: string;
+  lastName: string;
+  firstName: string;
   companyName: string;
   street: string;
   city: string;
@@ -345,6 +349,10 @@ export type Club = {
 };
 
 export async function createClub(
+  username: string,
+  passwordHash: string,
+  lastName: string,
+  firstName: string,
   companyName: string,
   street: string,
   city: string,
@@ -354,11 +362,15 @@ export async function createClub(
 ) {
   const [club] = await sql<[Club]>`
   INSERT INTO clubs
-    (company_name, street, city, post_code, email, hourly_rate)
+    (username, password_hash, last_name, first_name, company_name, street, city, post_code, email, hourly_rate)
   VALUES
-    ( ${companyName},${street}, ${city}, ${postCode}, ${email}, ${hourlyRate})
+    ( ${username}, ${passwordHash}, ${lastName}, ${firstName}, ${companyName},${street}, ${city}, ${postCode}, ${email}, ${hourlyRate})
     RETURNING
     id,
+    username,
+    password_hash,
+    first_name,
+    last_name,
     company_name,
     street,
     city,

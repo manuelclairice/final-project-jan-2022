@@ -11,7 +11,7 @@ const signUpPageStyle = css`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background: #8360c3; /* fallback for old browsers */
   background: -webkit-linear-gradient(
