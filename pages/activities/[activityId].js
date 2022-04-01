@@ -19,7 +19,7 @@ export default function SingleActivity(props) {
       </div>
       <div>
         <Image
-          src={`/images/activities/${props.activity.name}.png`}
+          src={`/images/activities/${props.activity.name}.PNG`}
           width="200"
           height="200"
         />
@@ -35,7 +35,7 @@ export default function SingleActivity(props) {
       </div>
       <div>
         <Image
-          src={`/images/activities/${props.activity.name}.png`}
+          src={`/images/activities/${props.activity.name}.PNG`}
           width="200"
           height="200"
         />
@@ -51,7 +51,7 @@ export default function SingleActivity(props) {
       </div>
       <div>
         <Image
-          src={`/images/activities/${props.activity.name}.png`}
+          src={`/images/activities/${props.activity.name}.PNG`}
           width="200"
           height="200"
         />
@@ -67,7 +67,7 @@ export default function SingleActivity(props) {
       </div>
       <div>
         <Image
-          src={`/images/activities/${props.activity.name}.png`}
+          src={`/images/activities/${props.activity.name}.PNG`}
           width="200"
           height="200"
         />
@@ -83,7 +83,7 @@ export default function SingleActivity(props) {
       </div>
       <div>
         <Image
-          src={`/images/activities/${props.activity.name}.png`}
+          src={`/images/activities/${props.activity.name}.PNG`}
           width="200"
           height="200"
         />
@@ -99,7 +99,7 @@ export default function SingleActivity(props) {
       </div>
       <div>
         <Image
-          src={`/images/activities/${props.activity.name}.png`}
+          src={`/images/activities/${props.activity.name}.PNG`}
           width="200"
           height="200"
         />
@@ -115,7 +115,7 @@ export default function SingleActivity(props) {
       </div>
       <div>
         <Image
-          src={`/images/activities/${props.activity.name}.png`}
+          src={`/images/activities/${props.activity.name}.PNG`}
           width="200"
           height="200"
         />
@@ -131,7 +131,7 @@ export default function SingleActivity(props) {
       </div>
       <div>
         <Image
-          src={`/images/activities/${props.activity.name}.png`}
+          src={`/images/activities/${props.activity.name}.PNG`}
           width="200"
           height="200"
         />
