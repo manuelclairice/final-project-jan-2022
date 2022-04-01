@@ -18,11 +18,7 @@ export default function SingleActivity(props) {
         <h1>{props.activity.name}</h1>
       </div>
       <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.jpg`}
-          width="200"
-          height="200"
-        />
+        <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
         <div>{props.club.companyName}</div>
         <div>{props.club.street}</div>
         <div>{props.club.city}</div>
@@ -34,11 +30,7 @@ export default function SingleActivity(props) {
         </div>
       </div>
       <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.jpg`}
-          width="200"
-          height="200"
-        />
+        <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
         <div>{props.club.companyName}</div>
         <div>{props.club.street}</div>
         <div>{props.club.city}</div>
@@ -50,11 +42,7 @@ export default function SingleActivity(props) {
         <button>Get in touch</button>
       </div>
       <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.jpg`}
-          width="200"
-          height="200"
-        />
+        <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
         <div>{props.club.companyName}</div>
         <div>{props.club.street}</div>
         <div>{props.club.city}</div>
@@ -66,11 +54,7 @@ export default function SingleActivity(props) {
         <button>Get in touch</button>
       </div>
       <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.jpg`}
-          width="200"
-          height="200"
-        />
+        <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
         <div>{props.club.companyName}</div>
         <div>{props.club.street}</div>
         <div>{props.club.city}</div>
@@ -82,11 +66,7 @@ export default function SingleActivity(props) {
         <button>Get in touch</button>
       </div>
       <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.jpg`}
-          width="200"
-          height="200"
-        />
+        <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
         <div>{props.club.companyName}</div>
         <div>{props.club.street}</div>
         <div>{props.club.city}</div>
@@ -98,11 +78,7 @@ export default function SingleActivity(props) {
         <button>Get in touch</button>
       </div>
       <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.jpg`}
-          width="200"
-          height="200"
-        />
+        <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
         <div>{props.club.companyName}</div>
         <div>{props.club.street}</div>
         <div>{props.club.city}</div>
@@ -114,11 +90,7 @@ export default function SingleActivity(props) {
         <button>Get in touch</button>
       </div>
       <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.jpg`}
-          width="200"
-          height="200"
-        />
+        <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
         <div>{props.club.companyName}</div>
         <div>{props.club.street}</div>
         <div>{props.club.city}</div>
@@ -130,11 +102,7 @@ export default function SingleActivity(props) {
         <button>Get in touch</button>
       </div>
       <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.jpg`}
-          width="200"
-          height="200"
-        />
+        <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
         <div>{props.club.companyName}</div>
         <div>{props.club.street}</div>
         <div>{props.club.city}</div>
