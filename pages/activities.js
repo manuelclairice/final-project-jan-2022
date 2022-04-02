@@ -13,9 +13,10 @@ const activityCardStyle = css`
   border: 1px solid #ccc;
   padding: 15px;
   margin-bottom: 20px;
+  margin-right: 10px;
+  margin-left: 22px;
   width: 220px;
   justify-content: space-evenly;
-  align-items: center;
   /* text-decoration: none; */
   cursor: pointer;
   :hover {

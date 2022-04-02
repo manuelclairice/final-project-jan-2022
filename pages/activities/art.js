@@ -7,16 +7,18 @@ import Layout from '../../components/Layout';
 import { getActivities } from '../../util/database';
 
 const activityCardStyle = css`
-  display: inline-block;
+  display: inline-flex;
+
   align-items: center;
 
   border-radius: 10px;
   border: 1px solid #ccc;
   padding: 15px;
   margin-bottom: 20px;
-  width: auto;
+  margin-right: 10px;
+  margin-left: 30px;
+  width: 220px;
   justify-content: space-evenly;
-  align-items: center;
   cursor: pointer;
   :hover {
     transition: transform 125ms;

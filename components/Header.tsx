@@ -5,27 +5,34 @@ import { User } from '../util/database';
 
 const headerStyles = css`
   position: relative;
+  /* position: -webkit-sticky;
+  position: sticky;
+  top: 0; */
   /* background-color: #5f83b6; */
-  background: #8360c3; /* fallback for old browsers */
+
+  /* fallback for old browsers */
+  /* background: #8360c3;
   background: -webkit-linear-gradient(
     to right,
     #2ebf91,
     #8360c3
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
+  );  */
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(
     to right,
     #2ebf91,
     #8360c3
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  );  */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 10px 15px;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   margin: 8px 8px 20px;
   display: flex;
 
   a {
     margin-left: 10px;
     text-decoration: none;
-    color: #fff;
+    /* color: #fff; */
     font-weight: bold;
     transition: box-shadow 0.3s;
     :hover {
@@ -39,7 +46,14 @@ const headerStyles = css`
 
 const userNameStyle = css`
   font-style: italic;
-  color: #fff;
+  font-weight: bold;
+  color: #ab0068;
+`;
+
+const logoStyle = css`
+  font-weight: bold;
+  color: #ab0068;
+  cursor: pointer;
 `;
 
 type Props = {
@@ -60,7 +74,7 @@ export default function Header(props: Props) {
     <header css={headerStyles}>
       <div>
         <Link href="/">
-          <a>Vienna KidsClub</a>
+          <a css={logoStyle}>Vienna KidsClub</a>
         </Link>
         <Link href="/activities">
           <a>Activities</a>

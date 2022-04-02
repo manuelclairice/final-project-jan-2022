@@ -8,23 +8,36 @@ import { getActivityTypes } from '../util/database';
 
 const heroImageStyle = css`
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('/hero-1.jpg');
+    url('/sport-hero.jpg');
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  display: flex;
+  overflow: hidden;
+  margin-top: 20px;
+  height: 60vh;
+  padding-top: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
 `;
 
 const homePageTextStyle = css`
   position: relative;
+  text-align: center;
+  color: #777777;
 `;
 
 const activitiesButtonsStyle = css`
   display: inline-block;
   margin: 70px;
   position: relative;
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -89,24 +102,31 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <Image src="/hero-1.jpg" width="1500" height="500" />  */}
-      <div css={heroImageStyle}>
-        <div css={homePageTextStyle}>
-          <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
-          <h2>
-            Quam vulputate dignissim suspendisse in est ante in. Ipsum faucibus
-            vitae aliquet nec. Purus sit amet volutpat consequat mauris nunc.
-            Volutpat odio facilisis mauris sit amet massa vitae.
-          </h2>
-          <h3>
-            Velit euismod in pellentesque massa placerat duis. Tincidunt vitae
-            semper quis lectus nulla at. Eget egestas purus viverra accumsan in
-            nisl nisi. Venenatis cras sed felis eget velit aliquet sagittis id
-            consectetur. Dui sapien eget mi proin sed libero. Morbi quis commodo
-            odio aenean.
-          </h3>
-        </div>
-      </div>
+      <div css={heroImageStyle} />
       <section>
+        <div css={homePageTextStyle}>
+          <h1>Everything to make your children dream!</h1>
+
+          <p>
+            Discover all the Club's artistic, cultural and sporting activities
+            for the 2022-2023 season.
+          </p>
+          <p>
+            Find us at the Club, a bright private mansion in the heart of the
+            22th district,
+          </p>
+          <p>
+            A unique place for children from birth to adolescence, but also for
+            adults.
+          </p>
+
+          <h4>
+            The entire Club team is at your disposal to accompany your family in
+            the discovery of the many disciplines on offer, whether in
+            year-round lessons,
+          </h4>
+          <h4>holiday courses or themed birthday parties.</h4>
+        </div>
         <div
           // key={`activities- ${activityType.id}`}
           css={activitiesButtonsStyle}
