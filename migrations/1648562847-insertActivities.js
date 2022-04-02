@@ -3,21 +3,21 @@ const activities = [
 
   {
     activity_types_id: 1,
-    name: 'Crafting',
+    name: 'crafting',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus sit amet luctus venenatis lectus magna fringilla.',
     clubs_id: 7,
   },
   {
     activity_types_id: 1,
-    name: 'Drawing',
+    name: 'drawing',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus sit amet luctus venenatis lectus magna fringilla.',
     clubs_id: 10,
   },
   {
     activity_types_id: 1,
-    name: 'Pottery',
+    name: 'pottery',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus sit amet luctus venenatis lectus magna fringilla.',
     clubs_id: 11,
@@ -27,21 +27,21 @@ const activities = [
 
   {
     activity_types_id: 2,
-    name: 'Piano',
+    name: 'piano',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus sit amet luctus venenatis lectus magna fringilla.',
     clubs_id: 16,
   },
   {
     activity_types_id: 2,
-    name: 'Guitar',
+    name: 'guitar',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus sit amet luctus venenatis lectus magna fringilla.',
     clubs_id: 14,
   },
   {
     activity_types_id: 2,
-    name: 'Violin',
+    name: 'violin',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus sit amet luctus venenatis lectus magna fringilla.',
     clubs_id: 18,
@@ -51,7 +51,7 @@ const activities = [
 
   {
     activity_types_id: 3,
-    name: 'Baking',
+    name: 'baking',
 
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus sit amet luctus venenatis lectus magna fringilla.',
@@ -59,7 +59,7 @@ const activities = [
   },
   {
     activity_types_id: 3,
-    name: 'Cake Decorating',
+    name: 'cake Decorating',
 
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus sit amet luctus venenatis lectus magna fringilla.',
@@ -67,7 +67,7 @@ const activities = [
   },
   {
     activity_types_id: 3,
-    name: 'Breakfast',
+    name: 'breakfast',
 
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus sit amet luctus venenatis lectus magna fringilla.',
@@ -78,7 +78,7 @@ const activities = [
 
   {
     activity_types_id: 4,
-    name: 'Ballet',
+    name: 'ballet',
 
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus sit amet luctus venenatis lectus magna fringilla.',
@@ -86,7 +86,7 @@ const activities = [
   },
   {
     activity_types_id: 4,
-    name: 'Breakdance',
+    name: 'breakdance',
 
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus sit amet luctus venenatis lectus magna fringilla.',
@@ -94,7 +94,7 @@ const activities = [
   },
   {
     activity_types_id: 4,
-    name: 'Modern Jazz',
+    name: 'modern Jazz',
 
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus sit amet luctus venenatis lectus magna fringilla.',
@@ -105,7 +105,7 @@ const activities = [
 
   {
     activity_types_id: 5,
-    name: 'Swimming',
+    name: 'swimming',
 
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus sit amet luctus venenatis lectus magna fringilla.',
@@ -113,7 +113,7 @@ const activities = [
   },
   {
     activity_types_id: 5,
-    name: 'Gymnastics',
+    name: 'gymnastics',
 
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus sit amet luctus venenatis lectus magna fringilla.',
@@ -121,7 +121,7 @@ const activities = [
   },
   {
     activity_types_id: 5,
-    name: 'Judo',
+    name: 'judo',
 
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus sit amet luctus venenatis lectus magna fringilla.',
