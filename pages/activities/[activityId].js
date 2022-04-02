@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-// import Link from 'next/link';
+import Link from 'next/link';
 import Layout from '../../components/Layout';
 import { getActivityById, getClubById } from '../../util/database';
 import { css } from '@emotion/react';
@@ -87,162 +87,234 @@ export default function SingleActivityPage(props) {
       </div>
       <section css={getInTouchButtonStyle}>
         <div css={singleClubCardStyle}>
-          <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
-          <div>{props.club.companyName}</div>
-          <br />
-          <div>{props.club.street}</div>
-          <div>{props.club.city}</div>
-          <div>{props.club.postCode}</div>
-          <div>{props.club.email}</div>
-          <br />
-          <div>{props.club.hourlyRate} euro/h</div>
-          <br />
-          <div>
-            <button>Get in touch</button>
-          </div>
+          <Link href={`/clubs/${props.club.id}`}>
+            <a>
+              <Image
+                src={`/${props.activity.name}.jpg`}
+                width="200"
+                height="200"
+              />
+              <div>{props.club.companyName}</div>
+              <br />
+              <div>{props.club.street}</div>
+              <div>{props.club.city}</div>
+              <div>{props.club.postCode}</div>
+              <div>{props.club.email}</div>
+              <br />
+              <div>{props.club.hourlyRate} euro/h</div>
+              <br />
+              <div>
+                <button>Get in touch</button>
+              </div>
+            </a>
+          </Link>
         </div>
         <div css={singleClubCardStyle}>
-          <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
-          <div>{props.club.companyName}</div>
-          <br />
-          <div>{props.club.street}</div>
-          <div>{props.club.city}</div>
-          <div>{props.club.postCode}</div>
-          <div>{props.club.email}</div>
-          <br />
-          <div>{props.club.hourlyRate} euro/h</div>
-          <br />
-          <div>
-            <button>Get in touch</button>
-          </div>
+          <Link href={`/clubs/${props.club.id}`}>
+            <a>
+              <Image
+                src={`/${props.activity.name}.jpg`}
+                width="200"
+                height="200"
+              />
+              <div>{props.club.companyName}</div>
+              <br />
+              <div>{props.club.street}</div>
+              <div>{props.club.city}</div>
+              <div>{props.club.postCode}</div>
+              <div>{props.club.email}</div>
+              <br />
+              <div>{props.club.hourlyRate} euro/h</div>
+              <br />
+              <div>
+                <button>Get in touch</button>
+              </div>
+            </a>
+          </Link>
         </div>
         <div css={singleClubCardStyle}>
-          <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
-          <div>{props.club.companyName}</div>
-          <br />
-          <div>{props.club.street}</div>
-          <div>{props.club.city}</div>
-          <div>{props.club.postCode}</div>
-          <div>{props.club.email}</div>
-          <br />
-          <div>{props.club.hourlyRate} euro/h</div>
-          <br />
-
-          <div>
-            <button>Get in touch</button>
-          </div>
+          <Link href={`/clubs/${props.club.id}`}>
+            <a>
+              <Image
+                src={`/${props.activity.name}.jpg`}
+                width="200"
+                height="200"
+              />
+              <div>{props.club.companyName}</div>
+              <br />
+              <div>{props.club.street}</div>
+              <div>{props.club.city}</div>
+              <div>{props.club.postCode}</div>
+              <div>{props.club.email}</div>
+              <br />
+              <div>{props.club.hourlyRate} euro/h</div>
+              <br />
+              <div>
+                <button>Get in touch</button>
+              </div>
+            </a>
+          </Link>
         </div>
         <div css={singleClubCardStyle}>
-          <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
-          <div>{props.club.companyName}</div>
-          <br />
-          <div>{props.club.street}</div>
-          <div>{props.club.city}</div>
-          <div>{props.club.postCode}</div>
-          <div>{props.club.email}</div>
-          <br />
-          <div>{props.club.hourlyRate} euro/h</div>
-          <br />
-
-          <div>
-            <button>Get in touch</button>
-          </div>
+          <Link href={`/clubs/${props.club.id}`}>
+            <a>
+              <Image
+                src={`/${props.activity.name}.jpg`}
+                width="200"
+                height="200"
+              />
+              <div>{props.club.companyName}</div>
+              <br />
+              <div>{props.club.street}</div>
+              <div>{props.club.city}</div>
+              <div>{props.club.postCode}</div>
+              <div>{props.club.email}</div>
+              <br />
+              <div>{props.club.hourlyRate} euro/h</div>
+              <br />
+              <div>
+                <button>Get in touch</button>
+              </div>
+            </a>
+          </Link>
         </div>
         <div css={singleClubCardStyle}>
-          <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
-          <div>{props.club.companyName}</div>
-          <br />
-          <div>{props.club.street}</div>
-          <div>{props.club.city}</div>
-          <div>{props.club.postCode}</div>
-          <div>{props.club.email}</div>
-          <br />
-          <div>{props.club.hourlyRate} euro/h</div>
-          <br />
-
-          <div>
-            <button>Get in touch</button>
-          </div>
+          <Link href={`/clubs/${props.club.id}`}>
+            <a>
+              <Image
+                src={`/${props.activity.name}.jpg`}
+                width="200"
+                height="200"
+              />
+              <div>{props.club.companyName}</div>
+              <br />
+              <div>{props.club.street}</div>
+              <div>{props.club.city}</div>
+              <div>{props.club.postCode}</div>
+              <div>{props.club.email}</div>
+              <br />
+              <div>{props.club.hourlyRate} euro/h</div>
+              <br />
+              <div>
+                <button>Get in touch</button>
+              </div>
+            </a>
+          </Link>
         </div>
         <div css={singleClubCardStyle}>
-          <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
-          <div>{props.club.companyName}</div>
-          <br />
-          <div>{props.club.street}</div>
-          <div>{props.club.city}</div>
-          <div>{props.club.postCode}</div>
-          <div>{props.club.email}</div>
-          <br />
-          <div>{props.club.hourlyRate} euro/h</div>
-          <br />
-
-          <div>
-            <button>Get in touch</button>
-          </div>
+          <Link href={`/clubs/${props.club.id}`}>
+            <a>
+              <Image
+                src={`/${props.activity.name}.jpg`}
+                width="200"
+                height="200"
+              />
+              <div>{props.club.companyName}</div>
+              <br />
+              <div>{props.club.street}</div>
+              <div>{props.club.city}</div>
+              <div>{props.club.postCode}</div>
+              <div>{props.club.email}</div>
+              <br />
+              <div>{props.club.hourlyRate} euro/h</div>
+              <br />
+              <div>
+                <button>Get in touch</button>
+              </div>
+            </a>
+          </Link>
         </div>
         <div css={singleClubCardStyle}>
-          <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
-          <div>{props.club.companyName}</div>
-          <br />
-          <div>{props.club.street}</div>
-          <div>{props.club.city}</div>
-          <div>{props.club.postCode}</div>
-          <div>{props.club.email}</div>
-          <br />
-          <div>{props.club.hourlyRate} euro/h</div>
-          <br />
-
-          <div>
-            <button>Get in touch</button>
-          </div>
+          <Link href={`/clubs/${props.club.id}`}>
+            <a>
+              <Image
+                src={`/${props.activity.name}.jpg`}
+                width="200"
+                height="200"
+              />
+              <div>{props.club.companyName}</div>
+              <br />
+              <div>{props.club.street}</div>
+              <div>{props.club.city}</div>
+              <div>{props.club.postCode}</div>
+              <div>{props.club.email}</div>
+              <br />
+              <div>{props.club.hourlyRate} euro/h</div>
+              <br />
+              <div>
+                <button>Get in touch</button>
+              </div>
+            </a>
+          </Link>
         </div>
         <div css={singleClubCardStyle}>
-          <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
-          <div>{props.club.companyName}</div>
-          <br />
-          <div>{props.club.street}</div>
-          <div>{props.club.city}</div>
-          <div>{props.club.postCode}</div>
-          <div>{props.club.email}</div>
-          <br />
-          <div>{props.club.hourlyRate} euro/h</div>
-          <br />
-
-          <div>
-            <button>Get in touch</button>
-          </div>
+          <Link href={`/clubs/${props.club.id}`}>
+            <a>
+              <Image
+                src={`/${props.activity.name}.jpg`}
+                width="200"
+                height="200"
+              />
+              <div>{props.club.companyName}</div>
+              <br />
+              <div>{props.club.street}</div>
+              <div>{props.club.city}</div>
+              <div>{props.club.postCode}</div>
+              <div>{props.club.email}</div>
+              <br />
+              <div>{props.club.hourlyRate} euro/h</div>
+              <br />
+              <div>
+                <button>Get in touch</button>
+              </div>
+            </a>
+          </Link>
         </div>
         <div css={singleClubCardStyle}>
-          <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
-          <div>{props.club.companyName}</div>
-          <br />
-          <div>{props.club.street}</div>
-          <div>{props.club.city}</div>
-          <div>{props.club.postCode}</div>
-          <div>{props.club.email}</div>
-          <br />
-          <div>{props.club.hourlyRate} euro/h</div>
-          <br />
-
-          <div>
-            <button>Get in touch</button>
-          </div>
+          <Link href={`/clubs/${props.club.id}`}>
+            <a>
+              <Image
+                src={`/${props.activity.name}.jpg`}
+                width="200"
+                height="200"
+              />
+              <div>{props.club.companyName}</div>
+              <br />
+              <div>{props.club.street}</div>
+              <div>{props.club.city}</div>
+              <div>{props.club.postCode}</div>
+              <div>{props.club.email}</div>
+              <br />
+              <div>{props.club.hourlyRate} euro/h</div>
+              <br />
+              <div>
+                <button>Get in touch</button>
+              </div>
+            </a>
+          </Link>
         </div>
         <div css={singleClubCardStyle}>
-          <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
-          <div>{props.club.companyName}</div>
-          <br />
-          <div>{props.club.street}</div>
-          <div>{props.club.city}</div>
-          <div>{props.club.postCode}</div>
-          <div>{props.club.email}</div>
-          <br />
-          <div>{props.club.hourlyRate} euro/h</div>
-          <br />
-
-          <div>
-            <button>Get in touch</button>
-          </div>
+          <Link href={`/clubs/${props.club.id}`}>
+            <a>
+              <Image
+                src={`/${props.activity.name}.jpg`}
+                width="200"
+                height="200"
+              />
+              <div>{props.club.companyName}</div>
+              <br />
+              <div>{props.club.street}</div>
+              <div>{props.club.city}</div>
+              <div>{props.club.postCode}</div>
+              <div>{props.club.email}</div>
+              <br />
+              <div>{props.club.hourlyRate} euro/h</div>
+              <br />
+              <div>
+                <button>Get in touch</button>
+              </div>
+            </a>
+          </Link>
         </div>
       </section>
     </Layout>
