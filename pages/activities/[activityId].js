@@ -56,6 +56,7 @@ const getInTouchButtonStyle = css`
     border-radius: 20px;
     cursor: pointer;
     border: 0;
+
     outline: none;
   }
 `;
