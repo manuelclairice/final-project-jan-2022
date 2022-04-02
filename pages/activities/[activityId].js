@@ -90,7 +90,7 @@ export default function SingleActivityPage(props) {
           <Link href={`/clubs/${props.club.id}`}>
             <a>
               <Image
-                src={`/${props.activity.name}.jpg`}
+                src={`/logos/${props.club.id}.png`}
                 width="200"
                 height="200"
               />
@@ -113,7 +113,7 @@ export default function SingleActivityPage(props) {
           <Link href={`/clubs/${props.club.id}`}>
             <a>
               <Image
-                src={`/${props.activity.name}.jpg`}
+                src={`/logos/${props.club.id}.png`}
                 width="200"
                 height="200"
               />
@@ -136,7 +136,7 @@ export default function SingleActivityPage(props) {
           <Link href={`/clubs/${props.club.id}`}>
             <a>
               <Image
-                src={`/${props.activity.name}.jpg`}
+                src={`/logos/${props.club.id}.png`}
                 width="200"
                 height="200"
               />
@@ -159,7 +159,7 @@ export default function SingleActivityPage(props) {
           <Link href={`/clubs/${props.club.id}`}>
             <a>
               <Image
-                src={`/${props.activity.name}.jpg`}
+                src={`/logos/${props.club.id}.png`}
                 width="200"
                 height="200"
               />
@@ -182,7 +182,7 @@ export default function SingleActivityPage(props) {
           <Link href={`/clubs/${props.club.id}`}>
             <a>
               <Image
-                src={`/${props.activity.name}.jpg`}
+                src={`/logos/${props.club.id}.png`}
                 width="200"
                 height="200"
               />
@@ -205,7 +205,7 @@ export default function SingleActivityPage(props) {
           <Link href={`/clubs/${props.club.id}`}>
             <a>
               <Image
-                src={`/${props.activity.name}.jpg`}
+                src={`/logos/${props.club.id}.png`}
                 width="200"
                 height="200"
               />
@@ -228,7 +228,7 @@ export default function SingleActivityPage(props) {
           <Link href={`/clubs/${props.club.id}`}>
             <a>
               <Image
-                src={`/${props.activity.name}.jpg`}
+                src={`/logos/${props.club.id}.png`}
                 width="200"
                 height="200"
               />
@@ -251,7 +251,7 @@ export default function SingleActivityPage(props) {
           <Link href={`/clubs/${props.club.id}`}>
             <a>
               <Image
-                src={`/${props.activity.name}.jpg`}
+                src={`/logos/${props.club.id}.png`}
                 width="200"
                 height="200"
               />
@@ -274,7 +274,7 @@ export default function SingleActivityPage(props) {
           <Link href={`/clubs/${props.club.id}`}>
             <a>
               <Image
-                src={`/${props.activity.name}.jpg`}
+                src={`/logos/${props.club.id}.png`}
                 width="200"
                 height="200"
               />
@@ -297,7 +297,7 @@ export default function SingleActivityPage(props) {
           <Link href={`/clubs/${props.club.id}`}>
             <a>
               <Image
-                src={`/${props.activity.name}.jpg`}
+                src={`/logos/${props.club.id}.png`}
                 width="200"
                 height="200"
               />
