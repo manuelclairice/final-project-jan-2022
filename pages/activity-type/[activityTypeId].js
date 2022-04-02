@@ -1,16 +1,9 @@
-import Head from 'next/head';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Layout from '../../components/Layout';
-import { getActivityById, getClubById } from '../../util/database';
-import { css } from '@emotion/react';
+import { getActivityTypeById, getClubById } from '../../util/database';
+import Head from 'next/head';
 
-const singleProductStyle = css`
-  display: inline-block;
-  align-items: center;
-  justify-content: space-evenly;
-`;
-
-export default function SingleActivity(props) {
+export default function ActivityType(props) {
   return (
     <Layout userObject={props.userObject}>
       <Head>
@@ -24,8 +17,12 @@ export default function SingleActivity(props) {
       <div>
         <h1>{props.activity.name}</h1>
       </div>
-      <div css={singleProductStyle}>
-        <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
+      {/* <div>
+        <Image
+          src={`/${props.activity.name}.jpg`}
+          width="200"
+          height="200"
+        />
         <div>{props.club.companyName}</div>
         <div>{props.club.street}</div>
         <div>{props.club.city}</div>
@@ -36,8 +33,12 @@ export default function SingleActivity(props) {
           <button>Get in touch</button>
         </div>
       </div>
-      <div css={singleProductStyle}>
-        <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
+      <div>
+        <Image
+          src={`/${props.activity.name}.jpg`}
+          width="200"
+          height="200"
+        />
         <div>{props.club.companyName}</div>
         <div>{props.club.street}</div>
         <div>{props.club.city}</div>
@@ -48,8 +49,12 @@ export default function SingleActivity(props) {
       <div>
         <button>Get in touch</button>
       </div>
-      <div css={singleProductStyle}>
-        <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
+      <div>
+        <Image
+          src={`/${props.activity.name}.jpg`}
+          width="200"
+          height="200"
+        />
         <div>{props.club.companyName}</div>
         <div>{props.club.street}</div>
         <div>{props.club.city}</div>
@@ -60,8 +65,12 @@ export default function SingleActivity(props) {
       <div>
         <button>Get in touch</button>
       </div>
-      <div css={singleProductStyle}>
-        <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
+      <div>
+        <Image
+          src={`/${props.activity.name}.jpg`}
+          width="200"
+          height="200"
+        />
         <div>{props.club.companyName}</div>
         <div>{props.club.street}</div>
         <div>{props.club.city}</div>
@@ -72,8 +81,12 @@ export default function SingleActivity(props) {
       <div>
         <button>Get in touch</button>
       </div>
-      <div css={singleProductStyle}>
-        <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
+      <div>
+        <Image
+          src={`/${props.activity.name}.jpg`}
+          width="200"
+          height="200"
+        />
         <div>{props.club.companyName}</div>
         <div>{props.club.street}</div>
         <div>{props.club.city}</div>
@@ -84,8 +97,12 @@ export default function SingleActivity(props) {
       <div>
         <button>Get in touch</button>
       </div>
-      <div css={singleProductStyle}>
-        <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
+      <div>
+        <Image
+          src={`/${props.activity.name}.jpg`}
+          width="200"
+          height="200"
+        />
         <div>{props.club.companyName}</div>
         <div>{props.club.street}</div>
         <div>{props.club.city}</div>
@@ -96,8 +113,12 @@ export default function SingleActivity(props) {
       <div>
         <button>Get in touch</button>
       </div>
-      <div css={singleProductStyle}>
-        <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
+      <div>
+        <Image
+          src={`/${props.activity.name}.jpg`}
+          width="200"
+          height="200"
+        />
         <div>{props.club.companyName}</div>
         <div>{props.club.street}</div>
         <div>{props.club.city}</div>
@@ -108,15 +129,19 @@ export default function SingleActivity(props) {
       <div>
         <button>Get in touch</button>
       </div>
-      <div css={singleProductStyle}>
-        <Image src={`/${props.activity.name}.jpg`} width="200" height="200" />
+      <div>
+        <Image
+          src={`/${props.activity.name}.jpg`}
+          width="200"
+          height="200"
+        />
         <div>{props.club.companyName}</div>
         <div>{props.club.street}</div>
         <div>{props.club.city}</div>
         <div>{props.club.postCode}</div>
         <div>{props.club.email}</div>
         <div>{props.club.hourlyRate} euro/h</div>
-      </div>
+      </div> */}
       <div>
         <button>Get in touch</button>
       </div>
@@ -125,18 +150,18 @@ export default function SingleActivity(props) {
 }
 
 export async function getServerSideProps(context) {
-  const activityId = context.query.activityId;
+  const activityTypeId = context.query.activityTypeId;
 
-  const activity = await getActivityById(activityId);
+  const activity = await getActivityTypeById(activityTypeId);
   const club = await getClubById(activity.clubs_id);
 
   console.log(activity);
-  console.log(activityId);
+  console.log(activityTypeId);
 
   return {
     props: {
       activity,
-      activityId,
+      activityTypeId,
       club,
     },
   };

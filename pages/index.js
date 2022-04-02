@@ -1,13 +1,29 @@
 import { css } from '@emotion/react';
 import Head from 'next/head';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../components/Layout';
 import { getActivityTypes } from '../util/database';
 // import { getActivityTypeById } from '../util/database';
 
+const heroImageStyle = css`
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/hero-1.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+`;
+
+const homePageTextStyle = css`
+  position: relative;
+`;
+
 const activitiesButtonsStyle = css`
-  display: flex;
+  display: inline-block;
+  margin: 70px;
+  position: relative;
   margin-top: 20px;
   justify-content: center;
   text-align: center;
@@ -18,7 +34,7 @@ const activitiesButtonsStyle = css`
     padding: 30px;
     border-width: 5px;
     border-style: solid;
-    margin: 50px;
+    /* margin: auto; */
     text-align: center;
     text-transform: uppercase;
     display: flex;
@@ -72,21 +88,23 @@ export default function Home(props) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Image src="/hero-1.jpg" width="1600" height="500" />
-      <div>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
-        <h2>
-          Quam vulputate dignissim suspendisse in est ante in. Ipsum faucibus
-          vitae aliquet nec. Purus sit amet volutpat consequat mauris nunc.
-          Volutpat odio facilisis mauris sit amet massa vitae.
-        </h2>
-        <h3>
-          Velit euismod in pellentesque massa placerat duis. Tincidunt vitae
-          semper quis lectus nulla at. Eget egestas purus viverra accumsan in
-          nisl nisi. Venenatis cras sed felis eget velit aliquet sagittis id
-          consectetur. Dui sapien eget mi proin sed libero. Morbi quis commodo
-          odio aenean.
-        </h3>
+      {/* <Image src="/hero-1.jpg" width="1500" height="500" />  */}
+      <div css={heroImageStyle}>
+        <div css={homePageTextStyle}>
+          <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+          <h2>
+            Quam vulputate dignissim suspendisse in est ante in. Ipsum faucibus
+            vitae aliquet nec. Purus sit amet volutpat consequat mauris nunc.
+            Volutpat odio facilisis mauris sit amet massa vitae.
+          </h2>
+          <h3>
+            Velit euismod in pellentesque massa placerat duis. Tincidunt vitae
+            semper quis lectus nulla at. Eget egestas purus viverra accumsan in
+            nisl nisi. Venenatis cras sed felis eget velit aliquet sagittis id
+            consectetur. Dui sapien eget mi proin sed libero. Morbi quis commodo
+            odio aenean.
+          </h3>
+        </div>
       </div>
       <section>
         <div
@@ -94,35 +112,35 @@ export default function Home(props) {
           css={activitiesButtonsStyle}
         >
           <div css={activitiesButtonsStyle}>
-            <Link href="activities/1">
+            <Link href="activities/art">
               <a>
                 <button css={artButtonStyle}>Art</button>
               </a>
             </Link>
           </div>
           <div css={activitiesButtonsStyle}>
-            <Link href="/activities/2">
+            <Link href="/activities/music">
               <a>
                 <button css={musicButtonStyle}>Music</button>
               </a>
             </Link>
           </div>
           <div css={activitiesButtonsStyle}>
-            <Link href="/activities/3">
+            <Link href="/activities/cooking">
               <a>
                 <button css={cookingButtonStyle}>Cooking</button>
               </a>
             </Link>
           </div>
           <div css={activitiesButtonsStyle}>
-            <Link href="/activities/4">
+            <Link href="/activities/dance">
               <a>
                 <button css={danceButtonStyle}>Dance</button>
               </a>
             </Link>
           </div>
           <div css={activitiesButtonsStyle}>
-            <Link href="/activities/5">
+            <Link href="/activities/sport">
               <a>
                 <button css={sportButtonStyle}>Sport</button>
               </a>

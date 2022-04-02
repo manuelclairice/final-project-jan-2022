@@ -115,6 +115,19 @@ export async function getActivityTypeById(id: number) {
   return activityType;
 }
 
+export async function getActivityTypeByName(name: string) {
+  const [activityTypeName] = await sql`
+  SELECT
+    name
+  FROM
+    activity_types
+  WHERE
+    name = ${name}`;
+  console.log(activityTypeName);
+  console.log(name);
+  return activityTypeName;
+}
+
 export async function getActivityByTypeId(activityId: number) {
   const [activityType] = await sql<[Activity | undefined]>`
   SELECT

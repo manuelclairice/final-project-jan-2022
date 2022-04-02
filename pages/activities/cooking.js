@@ -1,168 +1,56 @@
+import { css } from '@emotion/react';
 import Head from 'next/head';
-import Image from 'next/image';
+import Link from 'next/link';
+// import Image from 'next/image';
 import Layout from '../../components/Layout';
-import { getActivityById, getClubById } from '../../util/database';
+import { getActivities } from '../../util/database';
 
-export default function SingleActivity(props) {
+const activityCardStyle = css`
+  cursor: pointer;
+`;
+
+export default function CookingActivities(props) {
   return (
-    <Layout userObject={props.userObject}>
-      <Head>
-        <title>Vienna Kids Club</title>
-        <meta
-          name="description"
-          content="Find the best club in Vienna for your children"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div>
-        <h1>{props.activity.name}</h1>
-      </div>
-      <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.PNG`}
-          width="200"
-          height="200"
-        />
-        <div>{props.club.companyName}</div>
-        <div>{props.club.street}</div>
-        <div>{props.club.city}</div>
-        <div>{props.club.postCode}</div>
-        <div>{props.club.email}</div>
-        <div>{props.club.hourlyRate} euro/h</div>
-        <div>
-          <button>Get in touch</button>
-        </div>
-      </div>
-      <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.PNG`}
-          width="200"
-          height="200"
-        />
-        <div>{props.club.companyName}</div>
-        <div>{props.club.street}</div>
-        <div>{props.club.city}</div>
-        <div>{props.club.postCode}</div>
-        <div>{props.club.email}</div>
-        <div>{props.club.hourlyRate} euro/h</div>
-      </div>
-      <div>
-        <button>Get in touch</button>
-      </div>
-      <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.PNG`}
-          width="200"
-          height="200"
-        />
-        <div>{props.club.companyName}</div>
-        <div>{props.club.street}</div>
-        <div>{props.club.city}</div>
-        <div>{props.club.postCode}</div>
-        <div>{props.club.email}</div>
-        <div>{props.club.hourlyRate} euro/h</div>
-      </div>
-      <div>
-        <button>Get in touch</button>
-      </div>
-      <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.PNG`}
-          width="200"
-          height="200"
-        />
-        <div>{props.club.companyName}</div>
-        <div>{props.club.street}</div>
-        <div>{props.club.city}</div>
-        <div>{props.club.postCode}</div>
-        <div>{props.club.email}</div>
-        <div>{props.club.hourlyRate} euro/h</div>
-      </div>
-      <div>
-        <button>Get in touch</button>
-      </div>
-      <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.PNG`}
-          width="200"
-          height="200"
-        />
-        <div>{props.club.companyName}</div>
-        <div>{props.club.street}</div>
-        <div>{props.club.city}</div>
-        <div>{props.club.postCode}</div>
-        <div>{props.club.email}</div>
-        <div>{props.club.hourlyRate} euro/h</div>
-      </div>
-      <div>
-        <button>Get in touch</button>
-      </div>
-      <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.PNG`}
-          width="200"
-          height="200"
-        />
-        <div>{props.club.companyName}</div>
-        <div>{props.club.street}</div>
-        <div>{props.club.city}</div>
-        <div>{props.club.postCode}</div>
-        <div>{props.club.email}</div>
-        <div>{props.club.hourlyRate} euro/h</div>
-      </div>
-      <div>
-        <button>Get in touch</button>
-      </div>
-      <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.PNG`}
-          width="200"
-          height="200"
-        />
-        <div>{props.club.companyName}</div>
-        <div>{props.club.street}</div>
-        <div>{props.club.city}</div>
-        <div>{props.club.postCode}</div>
-        <div>{props.club.email}</div>
-        <div>{props.club.hourlyRate} euro/h</div>
-      </div>
-      <div>
-        <button>Get in touch</button>
-      </div>
-      <div>
-        <Image
-          src={`/images/activities/${props.activity.name}.PNG`}
-          width="200"
-          height="200"
-        />
-        <div>{props.club.companyName}</div>
-        <div>{props.club.street}</div>
-        <div>{props.club.city}</div>
-        <div>{props.club.postCode}</div>
-        <div>{props.club.email}</div>
-        <div>{props.club.hourlyRate} euro/h</div>
-      </div>
-      <div>
-        <button>Get in touch</button>
-      </div>
-    </Layout>
+    <div>
+      <Layout userObject={props.userObject}>
+        <Head>
+          <title>Cooking Activities</title>
+          <meta
+            name="description"
+            content="List of all the cooking activities"
+          />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <h1>ART</h1>
+
+        {props.activities.map((activity) => {
+          if (activity.id > 6 && activity.id < 10) {
+            return (
+              <div key={`activities- ${activity.id}`} css={activityCardStyle}>
+                <Link href={`/activities/${activity.id}`}>
+                  <a>
+                    <div>
+                      <h3>{activity.name}</h3>
+                      <p>{activity.description}</p>
+                      {/* <h3>{activity.id}</h3> */}
+                    </div>
+                  </a>
+                </Link>
+              </div>
+            );
+          }
+        })}
+      </Layout>
+    </div>
   );
 }
 
-export async function getServerSideProps(context) {
-  const activityId = context.query.activityId;
-
-  const activity = await getActivityById(activityId);
-  const club = await getClubById(activity.clubs_id);
-
-  console.log(activity);
-  console.log(activityId);
+export async function getServerSideProps() {
+  const activities = await getActivities();
 
   return {
     props: {
-      activity,
-      activityId,
-      club,
+      activities: activities,
     },
   };
 }

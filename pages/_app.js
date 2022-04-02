@@ -35,6 +35,9 @@ function MyApp({ Component, pageProps }) {
               sans-serif;
             background-color: #fff;
           }
+          a {
+  color: inherit;
+  text-decoration: none;
           main {
             margin: 0 8px;
           }

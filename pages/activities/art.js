@@ -1,9 +1,10 @@
 import { css } from '@emotion/react';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
-import Layout from '../components/Layout';
-import { getActivities } from '../util/database';
+import Image from 'next/image';
+// import Image from 'next/image';
+import Layout from '../../components/Layout';
+import { getActivities } from '../../util/database';
 
 const activityCardStyle = css`
   display: inline-block;
@@ -13,10 +14,9 @@ const activityCardStyle = css`
   border: 1px solid #ccc;
   padding: 15px;
   margin-bottom: 20px;
-  width: 220px;
+  width: auto;
   justify-content: space-evenly;
   align-items: center;
-  /* text-decoration: none; */
   cursor: pointer;
   :hover {
     transition: transform 125ms;
@@ -24,31 +24,19 @@ const activityCardStyle = css`
   }
 `;
 
-// const activityCardTextStyle = css`
-//   text-decoration: none;
-// `;
-
-// const activitiesPageStyle = css`
-//   display: inline-block;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   margin-top: 50px;
-// `;
-
-export default function Activities(props) {
+export default function ArtActivities(props) {
   return (
     <div>
       <Layout userObject={props.userObject}>
         <Head>
-          <title>Activities</title>
-          <meta name="description" content="List of all the activities" />
+          <title>Art Activities</title>
+          <meta name="description" content="List of all the art activities" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
+        <h1>ART</h1>
 
-        <h1>Activities</h1>
-        <div>
-          {props.activities.map((activity) => {
+        {props.activities.map((activity) => {
+          if (activity.id < 4) {
             return (
               <div key={`activities- ${activity.id}`} css={activityCardStyle}>
                 <Link href={`/activities/${activity.id}`}>
@@ -67,8 +55,8 @@ export default function Activities(props) {
                 </Link>
               </div>
             );
-          })}
-        </div>
+          }
+        })}
       </Layout>
     </div>
   );
