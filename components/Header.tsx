@@ -80,16 +80,18 @@ export default function Header(props: Props) {
           <a>Activities</a>
         </Link>
       </div>
+
       {props.userObject && (
-        <div css={userNameStyle}>Hey {props.userObject.firstName}!</div>
+        <div css={userNameStyle}>
+          <Link href="users/protected-user">
+            <a>Hey {props.userObject.firstName}!</a>
+          </Link>
+        </div>
       )}
       {props.userObject ? (
         <Anchor href="/logout">Logout</Anchor>
       ) : (
         <>
-          <Link href="users/protected-user">
-            <a>My profile</a>
-          </Link>
           <Link href="/signIn">
             <a>Sign in</a>
           </Link>

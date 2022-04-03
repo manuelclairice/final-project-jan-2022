@@ -36,8 +36,9 @@ function MyApp({ Component, pageProps }) {
             background-color: #fff;
           }
           a {
-  color: inherit;
-  text-decoration: none;
+            color: inherit;
+            text-decoration: none;
+          }
           main {
             margin: 0 8px;
           }

@@ -54,6 +54,7 @@ export default function singleClubPage(props) {
             <br />
           </div>
         </section>
+        <section />
       </Layout>
     </div>
   );
