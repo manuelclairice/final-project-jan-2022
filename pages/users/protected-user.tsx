@@ -2,11 +2,18 @@ import { GetServerSidePropsContext } from 'next';
 // import Head from 'next/head';
 import Layout from '../../components/Layout';
 import { getUserByValidSessionToken } from '../../util/database';
+import { css } from '@emotion/react';
 
 type Props = {
   userObject: { firstName: string };
   user: { id: number; username: string; firstName: string; lastName: string };
 };
+const addToFavoriteStyle = css`
+  cursor: pointer;
+  :hover {
+    color: #ab0068;
+  }
+`;
 
 export default function ProtectedUser(props: Props) {
   return (
@@ -14,11 +21,18 @@ export default function ProtectedUser(props: Props) {
       <div>
         <div>
           <h1>My profile</h1>
-          <div> user name is {props.user.lastName}</div>
-          <div> Welcome back {props.user.firstName}</div>
+          <div>
+            <h3>Welcome back {props.user.firstName}</h3>
+          </div>
         </div>
         <div>
           <h2>My favorite activities</h2>
+          <div>
+            <p>You haven't added any activities to your favorites.</p>
+            <p>
+              You can find the activities <a css={addToFavoriteStyle}>here</a>
+            </p>
+          </div>
         </div>
       </div>
     </Layout>

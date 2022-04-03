@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { css } from '@emotion/react';
 
 const formStyle = css`
-  display: flex;
+  /* display: flex; */
   border-radius: 20px;
   padding: 5px;
   width: 450px;
@@ -14,7 +14,7 @@ const formStyle = css`
   input {
     display: table-cell;
     margin-bottom: 10px;
-    width: 300px;
+    width: 400px;
     padding: 10px 0;
     border-left: 0;
     border-top: 0;
@@ -34,6 +34,10 @@ const formStyle = css`
     border: 0;
     outline: none;
   }
+  textarea {
+  }
+  width: 300px;
+  height: auto;
 `;
 
 export default function ContactForm() {
@@ -100,14 +104,18 @@ export default function ContactForm() {
               value={mailerState.email}
             />
           </div>
+          <br />
           <div>
             <textarea
+              rows="7"
+              cols="50"
               placeholder="Message"
               onChange={handleStateChange}
               name="message"
               value={mailerState.message}
             />
           </div>
+          <br />
           <button>Send Message</button>
         </div>
       </form>

@@ -1,12 +1,28 @@
 import { css } from '@emotion/react';
 import Head from 'next/head';
 import Link from 'next/link';
-// import Image from 'next/image';
+import Image from 'next/image';
 import Layout from '../../components/Layout';
 import { getActivities } from '../../util/database';
 
 const activityCardStyle = css`
+  display: inline-flex;
+
+  align-items: center;
+
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  margin-left: 30px;
+  width: 220px;
+  justify-content: space-evenly;
   cursor: pointer;
+  :hover {
+    transition: transform 125ms;
+    transform: translateY(-10px);
+  }
 `;
 
 export default function MusicActivities(props) {
@@ -26,6 +42,11 @@ export default function MusicActivities(props) {
               <div key={`activities- ${activity.id}`} css={activityCardStyle}>
                 <Link href={`/activities/${activity.id}`}>
                   <a>
+                    <Image
+                      src={`/images/${activity.id}.png`}
+                      width="300"
+                      height="300"
+                    />
                     <div>
                       <h3>{activity.name}</h3>
                       <p>{activity.description}</p>
