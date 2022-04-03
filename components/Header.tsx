@@ -77,6 +77,11 @@ export default function Header(props: Props) {
           <a css={logoStyle}>Vienna KidsClub</a>
         </Link>
       </div>
+      <div>
+        <Link href="/activities">
+          <a>Activities</a>
+        </Link>
+      </div>
 
       {props.userObject && (
         <div css={userNameStyle}>
@@ -89,9 +94,6 @@ export default function Header(props: Props) {
         <Anchor href="/logout">Logout</Anchor>
       ) : (
         <>
-          <Link href="/activities">
-            <a>Activities</a>
-          </Link>
           <Link href="/signIn">
             <a>Sign in</a>
           </Link>
