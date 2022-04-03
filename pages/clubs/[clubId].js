@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Layout from '../../components/Layout';
 import { getActivities, getClubById } from '../../util/database';
 import { css } from '@emotion/react';
+import ContactForm from '../../components/contactForm';
 
 const singleClubCardStyle = css`
   display: inline-block;
@@ -54,7 +55,9 @@ export default function singleClubPage(props) {
             <br />
           </div>
         </section>
-        <section />
+        <section>
+          <ContactForm />
+        </section>
       </Layout>
     </div>
   );

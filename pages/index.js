@@ -34,7 +34,7 @@ const homePageTextStyle = css`
 
 const activitiesButtonsStyle = css`
   display: inline-block;
-  margin: 70px;
+  margin: 60px;
   position: relative;
   margin-top: 30px;
   margin-bottom: 30px;
