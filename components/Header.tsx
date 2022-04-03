@@ -52,8 +52,12 @@ const userNameStyle = css`
 
 const logoStyle = css`
   font-weight: bold;
+  font-size: 18px;
   color: #ab0068;
   cursor: pointer;
+`;
+const logoKidsColor = css`
+  color: #000;
 `;
 
 type Props = {
@@ -74,7 +78,12 @@ export default function Header(props: Props) {
     <header css={headerStyles}>
       <div>
         <Link href="/">
-          <a css={logoStyle}>Vienna KidsClub</a>
+          <a css={logoStyle}>
+            Vienna{' '}
+            <div>
+              <a css={logoKidsColor}>Kids</a>Club
+            </div>
+          </a>
         </Link>
       </div>
       <div>
@@ -97,12 +106,12 @@ export default function Header(props: Props) {
           <Link href="/signIn">
             <a>Sign in</a>
           </Link>
-          <Link href="/club-registration">
+          <Link href="/signUp">
             <a>Are you a club?</a>
           </Link>
-          <Link href="/logout">
+          {/* <Link href="/logout">
             <a>Logout</a>
-          </Link>
+          </Link> */}
         </>
       )}
     </header>

@@ -9,16 +9,16 @@ import { getActivityTypes } from '../util/database';
 const heroImageStyle = css`
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('/sport-hero.jpg');
-  height: 100%;
+  /* height: 100%; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   display: flex;
   overflow: hidden;
-  margin-top: 20px;
+  /* margin-top: 5px; */
   height: 60vh;
-  padding-top: 0;
+  /* padding-top: 0; */
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-direction: column;

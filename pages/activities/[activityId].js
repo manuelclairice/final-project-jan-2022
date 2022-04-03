@@ -112,11 +112,7 @@ export default function SingleActivityPage(props) {
         <div css={singleClubCardStyle}>
           <Link href={`/clubs/${props.club.id}`}>
             <a>
-              <Image
-                src={`/logos/${props.club.id}.png`}
-                width="200"
-                height="200"
-              />
+              <Image src="/logos/28.png" width="200" height="200" />
               <div>{props.club.companyName}</div>
               <br />
               <div>{props.club.street}</div>
@@ -135,11 +131,7 @@ export default function SingleActivityPage(props) {
         <div css={singleClubCardStyle}>
           <Link href={`/clubs/${props.club.id}`}>
             <a>
-              <Image
-                src={`/logos/${props.club.id}.png`}
-                width="200"
-                height="200"
-              />
+              <Image src="/logos/1.png" width="200" height="200" />
               <div>{props.club.companyName}</div>
               <br />
               <div>{props.club.street}</div>
@@ -158,11 +150,7 @@ export default function SingleActivityPage(props) {
         <div css={singleClubCardStyle}>
           <Link href={`/clubs/${props.club.id}`}>
             <a>
-              <Image
-                src={`/logos/${props.club.id}.png`}
-                width="200"
-                height="200"
-              />
+              <Image src="/logos/4.png" width="200" height="200" />
               <div>{props.club.companyName}</div>
               <br />
               <div>{props.club.street}</div>
@@ -181,126 +169,7 @@ export default function SingleActivityPage(props) {
         <div css={singleClubCardStyle}>
           <Link href={`/clubs/${props.club.id}`}>
             <a>
-              <Image
-                src={`/logos/${props.club.id}.png`}
-                width="200"
-                height="200"
-              />
-              <div>{props.club.companyName}</div>
-              <br />
-              <div>{props.club.street}</div>
-              <div>{props.club.city}</div>
-              <div>{props.club.postCode}</div>
-              <div>{props.club.email}</div>
-              <br />
-              <div>{props.club.hourlyRate} euro/h</div>
-              <br />
-              <div>
-                <button>Get in touch</button>
-              </div>
-            </a>
-          </Link>
-        </div>
-        <div css={singleClubCardStyle}>
-          <Link href={`/clubs/${props.club.id}`}>
-            <a>
-              <Image
-                src={`/logos/${props.club.id}.png`}
-                width="200"
-                height="200"
-              />
-              <div>{props.club.companyName}</div>
-              <br />
-              <div>{props.club.street}</div>
-              <div>{props.club.city}</div>
-              <div>{props.club.postCode}</div>
-              <div>{props.club.email}</div>
-              <br />
-              <div>{props.club.hourlyRate} euro/h</div>
-              <br />
-              <div>
-                <button>Get in touch</button>
-              </div>
-            </a>
-          </Link>
-        </div>
-        <div css={singleClubCardStyle}>
-          <Link href={`/clubs/${props.club.id}`}>
-            <a>
-              <Image
-                src={`/logos/${props.club.id}.png`}
-                width="200"
-                height="200"
-              />
-              <div>{props.club.companyName}</div>
-              <br />
-              <div>{props.club.street}</div>
-              <div>{props.club.city}</div>
-              <div>{props.club.postCode}</div>
-              <div>{props.club.email}</div>
-              <br />
-              <div>{props.club.hourlyRate} euro/h</div>
-              <br />
-              <div>
-                <button>Get in touch</button>
-              </div>
-            </a>
-          </Link>
-        </div>
-        <div css={singleClubCardStyle}>
-          <Link href={`/clubs/${props.club.id}`}>
-            <a>
-              <Image
-                src={`/logos/${props.club.id}.png`}
-                width="200"
-                height="200"
-              />
-              <div>{props.club.companyName}</div>
-              <br />
-              <div>{props.club.street}</div>
-              <div>{props.club.city}</div>
-              <div>{props.club.postCode}</div>
-              <div>{props.club.email}</div>
-              <br />
-              <div>{props.club.hourlyRate} euro/h</div>
-              <br />
-              <div>
-                <button>Get in touch</button>
-              </div>
-            </a>
-          </Link>
-        </div>
-        <div css={singleClubCardStyle}>
-          <Link href={`/clubs/${props.club.id}`}>
-            <a>
-              <Image
-                src={`/logos/${props.club.id}.png`}
-                width="200"
-                height="200"
-              />
-              <div>{props.club.companyName}</div>
-              <br />
-              <div>{props.club.street}</div>
-              <div>{props.club.city}</div>
-              <div>{props.club.postCode}</div>
-              <div>{props.club.email}</div>
-              <br />
-              <div>{props.club.hourlyRate} euro/h</div>
-              <br />
-              <div>
-                <button>Get in touch</button>
-              </div>
-            </a>
-          </Link>
-        </div>
-        <div css={singleClubCardStyle}>
-          <Link href={`/clubs/${props.club.id}`}>
-            <a>
-              <Image
-                src={`/logos/${props.club.id}.png`}
-                width="200"
-                height="200"
-              />
+              <Image src="/logos/10.png" width="200" height="200" />
               <div>{props.club.companyName}</div>
               <br />
               <div>{props.club.street}</div>

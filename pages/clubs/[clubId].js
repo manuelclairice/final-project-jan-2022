@@ -101,7 +101,7 @@ export default function singleClubPage(props) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <h1>Club</h1>
+        {/* <h1>Club</h1> */}
         <div css={singleClubPageStyle}>
           <section>
             <div css={activityCardStyle}>
