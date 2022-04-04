@@ -112,13 +112,13 @@ export default function SingleActivityPage(props) {
         <div css={singleClubCardStyle}>
           <Link href={`/clubs/${props.club.id}`}>
             <a>
-              <Image src="/logos/28.png" width="200" height="200" />
-              <div>{props.club.companyName}</div>
+              <Image src="/logos/51.png" width="200" height="200" />
+              <div>Painting Club Neubau</div>
               <br />
-              <div>{props.club.street}</div>
+              <div>Paintgasse 3</div>
               <div>{props.club.city}</div>
-              <div>{props.club.postCode}</div>
-              <div>{props.club.email}</div>
+              <div>1070</div>
+              <div>hello@paintclub.com</div>
               <br />
               <div>{props.club.hourlyRate} euro/h</div>
               <br />
@@ -131,13 +131,13 @@ export default function SingleActivityPage(props) {
         <div css={singleClubCardStyle}>
           <Link href={`/clubs/${props.club.id}`}>
             <a>
-              <Image src="/logos/1.png" width="200" height="200" />
-              <div>{props.club.companyName}</div>
+              <Image src="/logos/52.png" width="200" height="200" />
+              <div>Graffiti Club Seestadt</div>
               <br />
-              <div>{props.club.street}</div>
+              <div>Graffitistrasse 321</div>
               <div>{props.club.city}</div>
               <div>{props.club.postCode}</div>
-              <div>{props.club.email}</div>
+              <div>info@graffiti.at</div>
               <br />
               <div>{props.club.hourlyRate} euro/h</div>
               <br />
@@ -150,13 +150,13 @@ export default function SingleActivityPage(props) {
         <div css={singleClubCardStyle}>
           <Link href={`/clubs/${props.club.id}`}>
             <a>
-              <Image src="/logos/4.png" width="200" height="200" />
-              <div>{props.club.companyName}</div>
+              <Image src="/logos/53.png" width="200" height="200" />
+              <div>Little Artist</div>
               <br />
-              <div>{props.club.street}</div>
+              <div>Artgasse 5</div>
               <div>{props.club.city}</div>
-              <div>{props.club.postCode}</div>
-              <div>{props.club.email}</div>
+              <div>1030</div>
+              <div>art@littleartist.com</div>
               <br />
               <div>{props.club.hourlyRate} euro/h</div>
               <br />
@@ -169,13 +169,13 @@ export default function SingleActivityPage(props) {
         <div css={singleClubCardStyle}>
           <Link href={`/clubs/${props.club.id}`}>
             <a>
-              <Image src="/logos/10.png" width="200" height="200" />
-              <div>{props.club.companyName}</div>
+              <Image src="/logos/54.png" width="200" height="200" />
+              <div>Craft Club Vienna</div>
               <br />
-              <div>{props.club.street}</div>
+              <div>Bastelstrasse 101</div>
               <div>{props.club.city}</div>
-              <div>{props.club.postCode}</div>
-              <div>{props.club.email}</div>
+              <div>1010</div>
+              <div>bsteln@craftclub.at</div>
               <br />
               <div>{props.club.hourlyRate} euro/h</div>
               <br />
