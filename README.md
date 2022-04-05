@@ -5,26 +5,29 @@
 Vienna KidsClub is a web app where parents and clubs can find each other.
 
 # Tech Stack
+  ## Front/Backend
+   - Next.Js
+   - React
+   - JavaScript
+   - TYpeScript
+   - @emotion
+   - Node.Js
+   - Bcrypt
+   - Dotenv
 
-## Front/Backend
- - Next.Js
- - React
- - JavaScript
- - TYpeScript
- - @emotion
- - Node.Js
- - Bcrypt
- - Dotenv
+  ## Database
+   - PostgreSQL
+   - Ley
 
-## Database
- - PostgreSQL
- - Ley
+  ## Email feature
+   - nodemailer
+   - Express
+   - Cors
+   - Gmail API
 
-## Email feature
- - nodemailer
- - Express
- - Cors
- - Gmail API
+  ## Deployment
+   - Heroku
+
 
 # Screenshots
 
