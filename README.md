@@ -4,17 +4,32 @@
 
 Vienna KidsClub is a web app where parents and clubs can find each other.
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+# Front/Backend
+ - Next.Js
+ - React
+ - JavaScript
+ - TYpeScript
+ - @emotion
+ - Node.Js
+ - Bcrypt
+ - Dotenv
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Database
+ - PostgreSQL
+ - Ley
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Email feature
+ - nodemailer
+ - Express
+ - Cors
+ - Gmail API
 
-## Deploy on Vercel
+## Screenshots
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Screenshot 2022-04-04 at 12 55 47](https://user-images.githubusercontent.com/95539204/161729095-676e3690-8bc3-41c0-a6b3-03eea80c59f0.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![Screenshot 2022-04-04 at 12 54 36](https://user-images.githubusercontent.com/95539204/161729262-2c869281-00cf-45fc-8bd7-e23d2da99a13.png)
+
+![Screenshot 2022-04-04 at 12 55 14](https://user-images.githubusercontent.com/95539204/161729312-488e6fad-26bb-4c9c-b98b-631dce6bb6bf.png)
