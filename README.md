@@ -9,7 +9,7 @@ Vienna KidsClub is a web app where parents and clubs can find each other.
    - Next.Js
    - React
    - JavaScript
-   - TYpeScript
+   - TypeScript
    - @emotion
    - Node.Js
    - Bcrypt
