@@ -24,7 +24,7 @@
     "js-cookie": "3.0.1",
     "ley": "0.7.1",
     "next": "12.1.0",
-    "nodemailer": "6.7.3",
+    "nodemailer": "6.7.7",
     "pg-connection-string": "2.5.0",
     "postgres": "2.0.0-beta.11",
     "react": "17.0.2",
