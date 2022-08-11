@@ -1478,10 +1478,10 @@
   resolved "https://registry.yarnpkg.com/@upleveled/eslint-config-upleveled/-/eslint-config-upleveled-2.8.0.tgz#1c0311269c05cea4cd226f1943f33ec69651fceb"
   integrity sha512-tEkY49lgqUZLiUCTtotK0qW9HWtJm94tRMzGrqEpuahantZh2GqHvD3kaiGFciBxGcPbCR7BlT+c8HvFZ4n4KA==
 
-"@upleveled/eslint-plugin-upleveled@2.1.3":
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/@upleveled/eslint-plugin-upleveled/-/eslint-plugin-upleveled-2.1.3.tgz#17eb5a303e42bbd7cc1fb876edc097f7ac3aa066"
-  integrity sha512-wEpCn0il9hIj5HdkBqlRiTK+uw7xONzj1sh3NwwMRbuKCdCClYqg04zGlJlSuBI/GAbciGCP79VGssRsa/bhfg==
+"@upleveled/eslint-plugin-upleveled@2.1.5":
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/@upleveled/eslint-plugin-upleveled/-/eslint-plugin-upleveled-2.1.5.tgz#2f441c2b38ec4f8ab07a71e310d437ee9810571d"
+  integrity sha512-9n/M47/d4ENnS0VFfL9CSUlWk+4tBCj9/xxe96HyabgTWCHO8VbY16TgELFqGT2lHotJcaIw2OY+9/qG060KTw==
 
 abbrev@1:
   version "1.1.1"
