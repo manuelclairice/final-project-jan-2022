@@ -20,7 +20,7 @@
     "csrf": "3.1.0",
     "dotenv-cli": "5.1.0",
     "dotenv-safe": "8.2.0",
-    "express": "4.17.3",
+    "express": "4.19.2",
     "js-cookie": "3.0.1",
     "ley": "0.7.1",
     "next": "12.1.0",
