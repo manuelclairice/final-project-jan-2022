@@ -39,7 +39,7 @@
     "@types/csrf": "3.1.0",
     "@types/dotenv-safe": "8.1.2",
     "@types/js-cookie": "3.0.2",
-    "@types/node": "17.0.23",
+    "@types/node": "17.0.45",
     "@types/pg": "8.6.5",
     "@types/react": "17.0.48",
     "@types/react-dom": "17.0.17",
